@@ -6,7 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/aib_ams_skywater130.iml" filepath="$PROJECT_DIR$/.idea/aib_ams_skywater130.iml" />
       <module fileurl="file://$PROJECT_DIR$/bag3_digital/.idea/bag3_digital.iml" filepath="$PROJECT_DIR$/bag3_digital/.idea/bag3_digital.iml" />
       <module fileurl="file://$PROJECT_DIR$/skywater130/.idea/skywater130.iml" filepath="$PROJECT_DIR$/skywater130/.idea/skywater130.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xbase_bcad/.idea/xbase_bcad.iml" filepath="$PROJECT_DIR$/xbase/.idea/xbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xbase/.idea/xbase.iml" filepath="$PROJECT_DIR$/xbase/.idea/xbase.iml" />
     </modules>
   </component>
 </project>
