@@ -1,0 +1,4 @@
+DEFINE BAG_prim $BAG_TECH_CONFIG_DIR/OA/BAG_prim
+DEFINE bag_test $BAG_WORK_DIR/BAG_framework/OA/bag_test
+DEFINE bag3_digital $BAG_WORK_DIR/bag3_digital/OA/bag3_digital
+DEFINE xbase $BAG_WORK_DIR/xbase/OA/xbase

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/cbag" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/cbag/cbag_polygon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics/pybind11" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics/pybind11/tools/clang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bag3_digital" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/data/bag3_digital" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/skywater130" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xbase" vcs="Git" />
+  </component>
+</project>
