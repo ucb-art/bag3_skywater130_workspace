@@ -1,15 +1,15 @@
 [submodule "data/bag3_digital"]
 	path = data/bag3_digital
-	url = git@login1.bcanalog.com:skywater130/bag/bag3_digital_data_release.git
+	url = git@github.com:bluecheetah/skywater130_bag3_digital_data.git
 [submodule "skywater130"]
 	path = skywater130
-	url = git@login1.bcanalog.com:skywater130/skywater130_release.git
+	url = git@github.com:bluecheetah/skywater130.git
 [submodule "BAG_framework"]
 	path = BAG_framework
-	url = git@login1.bcanalog.com:BAG/BAG_framework_release.git
+	url = git@github.com:bluecheetah/bag.git
 [submodule "xbase"]
 	path = xbase
-	url = git@login1.bcanalog.com:BAG/xbase_release.git
+	url = git@github.com:bluecheetah/xbase.git
 [submodule "bag3_digital"]
 	path = bag3_digital
-	url = git@login1.bcanalog.com:BAG/bag3_digital_release.git
+	url = git@github.com:bluecheetah/bag3_digital.git
