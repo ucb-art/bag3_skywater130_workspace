@@ -2,6 +2,10 @@
 
 open-source release of skywater aib_ams workspace.
 
+## Licensing
+
+This library is licensed under the Apache-2.0 license.  See [here](LICENSE) for full text of the 
+
 # Setting up
 
 1. Clone the repository.
@@ -13,6 +17,7 @@ git submodule update --init --recursive
 ```
 
 3. Change various environment files in `skywater130/workspace_setup` to match your settings.
+This will include the paths to tools found in the .bashrc file.
 
 4. Setup environment:
 ```
@@ -27,6 +32,11 @@ cd BAG_framework/pybag
 ```
 
 or obtain pre-compiled library from Blue Cheetah.
+
+6. Create cds.lib file:
+```
+echo "INLUDE $BAG_WORK_DIR/cds.lib.core" > cds.lib
+```
 
 
 # Running example
