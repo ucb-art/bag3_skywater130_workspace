@@ -35,7 +35,7 @@ or obtain pre-compiled library from Blue Cheetah.
 
 6. Create cds.lib file:
 ```
-echo "INCLUDE $BAG_WORK_DIR/cds.lib.core" > cds.lib
+echo 'INCLUDE $BAG_WORK_DIR/cds.lib.core' > cds.lib
 ```
 
 
