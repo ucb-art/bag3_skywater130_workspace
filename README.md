@@ -4,7 +4,7 @@ open-source release of skywater aib_ams workspace.
 
 ## Licensing
 
-This library is licensed under the Apache-2.0 license.  See [here](LICENSE) for full text of the 
+This library is licensed under the Apache-2.0 license.  See [here](LICENSE) for full text of the Apache license.
 
 # Setting up
 
@@ -35,7 +35,7 @@ or obtain pre-compiled library from Blue Cheetah.
 
 6. Create cds.lib file:
 ```
-echo "INLUDE $BAG_WORK_DIR/cds.lib.core" > cds.lib
+echo "INCLUDE $BAG_WORK_DIR/cds.lib.core" > cds.lib
 ```
 
 
@@ -59,4 +59,4 @@ echo "INLUDE $BAG_WORK_DIR/cds.lib.core" > cds.lib
 ./run_bag.sh BAG_framework/run_scripts/gen_cell.py data/bag3_digital/specs_gen/inv.yaml -raw -v
 ```
 
-An tristate-inverter, NAND2, NOR2 example are also provided, just change the YAML file path.
+An tristate-inverter, NAND2, NOR2 example are also provided, just change the YAML file path.  Look at the files in the `data/bag3_digital/specs_gen` for the names.
