@@ -1,0 +1,452 @@
+lib_name: bag3_testbenches
+cell_name: diode_tb_sp
+view_name: schematic
+bbox:
+  - -427
+  - -330
+  - 38
+  - 320
+terminals:
+  {}
+shapes:
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vp
+      points:
+        -
+          - -120
+          - 280
+        -
+          - -120
+          - 320
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vm
+      points:
+        -
+          - -120
+          - 80
+        -
+          - -120
+          - 120
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vac
+      points:
+        -
+          - -310
+          - -90
+        -
+          - -310
+          - -50
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -310
+          - -210
+        -
+          - -310
+          - -170
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vp
+      points:
+        -
+          - -210
+          - -50
+        -
+          - -170
+          - -50
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vac
+      points:
+        -
+          - -310
+          - -50
+        -
+          - -270
+          - -50
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vp
+      points:
+        -
+          - -170
+          - -90
+        -
+          - -170
+          - -50
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vdc
+      points:
+        -
+          - -170
+          - -190
+        -
+          - -170
+          - -150
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -170
+          - -290
+        -
+          - -170
+          - -250
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vac
+      origin:
+        - -300
+        - -43
+      alignment: 5
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vac
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vp
+      origin:
+        - -180
+        - -43
+      alignment: 5
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vp
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vdc
+      origin:
+        - -177
+        - -170
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vdc
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vm
+      origin:
+        - -127
+        - 116
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vm
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vp
+      origin:
+        - -127
+        - 284
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vp
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: vm
+      points:
+        -
+          - -60
+          - -80
+        -
+          - -60
+          - -40
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -60
+          - -180
+        -
+          - -60
+          - -140
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: vm
+      origin:
+        - -67
+        - -50
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: vm
+instances:
+  CP:
+    lib_name: analogLib
+    cell_name: dcblock
+    view_name: symbol
+    xform:
+      - -270
+      - -50
+      - R0
+    bbox:
+      - -395
+      - -73
+      - -82
+      - 44
+    connections:
+      MINUS: vp
+      PLUS: vac
+    params:
+      {}
+    is_primitive: true
+  I0:
+    lib_name: analogLib
+    cell_name: gnd
+    view_name: symbol
+    xform:
+      - -310
+      - -210
+      - R0
+    bbox:
+      - -320
+      - -250
+      - -236
+      - -206
+    connections:
+      gnd!: gnd!
+    params:
+      {}
+    is_primitive: true
+  I3:
+    lib_name: analogLib
+    cell_name: gnd
+    view_name: symbol
+    xform:
+      - -60
+      - -180
+      - R0
+    bbox:
+      - -70
+      - -220
+      - 14
+      - -176
+    connections:
+      gnd!: gnd!
+    params:
+      {}
+    is_primitive: true
+  I5:
+    lib_name: analogLib
+    cell_name: gnd
+    view_name: symbol
+    xform:
+      - -170
+      - -290
+      - R0
+    bbox:
+      - -180
+      - -330
+      - -96
+      - -286
+    connections:
+      gnd!: gnd!
+    params:
+      {}
+    is_primitive: true
+  LP:
+    lib_name: analogLib
+    cell_name: dcfeed
+    view_name: symbol
+    xform:
+      - -170
+      - -150
+      - R90
+    bbox:
+      - -263
+      - -266
+      - -156
+      - 35
+    connections:
+      MINUS: vp
+      PLUS: vdc
+    params:
+      {}
+    is_primitive: true
+  PORTP:
+    lib_name: analogLib
+    cell_name: port
+    view_name: symbol
+    xform:
+      - -310
+      - -90
+      - R0
+    bbox:
+      - -427
+      - -177
+      - -216
+      - -85
+    connections:
+      MINUS: gnd!
+      PLUS: vac
+    params:
+      filenums:
+        - 3
+        - none
+      pm:
+        - 3
+        - Normal
+      vdc:
+        - 3
+        - 0
+    is_primitive: true
+  VM:
+    lib_name: analogLib
+    cell_name: vdc
+    view_name: symbol
+    xform:
+      - -60
+      - -80
+      - R0
+    bbox:
+      - -182
+      - -144
+      - 34
+      - -76
+    connections:
+      MINUS: gnd!
+      PLUS: vm
+    params:
+      vdc:
+        - 3
+        - vminus
+    is_primitive: true
+  VP:
+    lib_name: analogLib
+    cell_name: vdc
+    view_name: symbol
+    xform:
+      - -170
+      - -190
+      - R0
+    bbox:
+      - -292
+      - -254
+      - -76
+      - -186
+    connections:
+      MINUS: gnd!
+      PLUS: vdc
+    params:
+      vdc:
+        - 3
+        - vplus
+    is_primitive: true
+  XDUT:
+    lib_name: bag3_testbenches
+    cell_name: diode_dut
+    view_name: symbol
+    xform:
+      - -160
+      - 120
+      - R0
+    bbox:
+      - -163
+      - 116
+      - 38
+      - 301
+    connections:
+      MINUS: vm
+      PLUS: vp
+    params:
+      {}
+    is_primitive: false
+props:
+  connectivityLastUpdated:
+    - 0
+    - 3736
+  instance#:
+    - 0
+    - 6
+  lastSchematicExtraction:
+    - 4
+    - time_val: 1565290131
+  net#:
+    - 0
+    - 5
+  schGeometryLastUpdated:
+    - 0
+    - 3736
+  schGeometryVersion:
+    - 3
+    - sch.ds.gm.1.4
+  schXtrVersion:
+    - 3
+    - sch.10.0
+app_defs:
+  _dbLastSavedCounter:
+    - 0
+    - 3736
+  _dbvCvTimeStamp:
+    - 0
+    - 3736
+  cdbRevision:
+    - 0
+    - 227612

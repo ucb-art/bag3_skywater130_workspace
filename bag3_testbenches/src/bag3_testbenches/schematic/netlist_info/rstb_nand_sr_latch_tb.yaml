@@ -1,0 +1,651 @@
+lib_name: bag3_testbenches
+cell_name: rstb_nand_sr_latch_tb
+view_name: schematic
+bbox:
+  - -1082
+  - -260
+  - 364
+  - 220
+terminals:
+  {}
+shapes:
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - 60
+          - 180
+        -
+          - 60
+          - 220
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - 53
+        - 184
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - 60
+          - -160
+        -
+          - 60
+          - -120
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - 53
+        - -124
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: q
+      points:
+        -
+          - 320
+          - 80
+        -
+          - 360
+          - 80
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: q
+      origin:
+        - 324
+        - 87
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: q
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: q_b
+      points:
+        -
+          - 320
+          - -40
+        -
+          - 360
+          - -40
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: q_b
+      origin:
+        - 324
+        - -33
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: q_b
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: async_rstb
+      points:
+        -
+          - -240
+          - 20
+        -
+          - -200
+          - 20
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: async_rstb
+      origin:
+        - -204
+        - 27
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: async_rstb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: rstb
+      points:
+        -
+          - -240
+          - 120
+        -
+          - -200
+          - 120
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: rstb
+      origin:
+        - -204
+        - 127
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: rstb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: setb
+      points:
+        -
+          - -240
+          - -80
+        -
+          - -200
+          - -80
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: setb
+      origin:
+        - -204
+        - -73
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: setb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - -960
+          - 160
+        -
+          - -960
+          - 200
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - -967
+        - 164
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -960
+          - 60
+        -
+          - -960
+          - 100
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -967
+        - 96
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -800
+          - 160
+        -
+          - -800
+          - 200
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -807
+        - 164
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -800
+          - 60
+        -
+          - -800
+          - 100
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: rstb
+      points:
+        -
+          - -960
+          - -160
+        -
+          - -960
+          - -120
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: rstb
+      origin:
+        - -967
+        - -156
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: rstb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -960
+          - -260
+        -
+          - -960
+          - -220
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -967
+        - -224
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: setb
+      points:
+        -
+          - -800
+          - -160
+        -
+          - -800
+          - -120
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: setb
+      origin:
+        - -807
+        - -156
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: setb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -800
+          - -260
+        -
+          - -800
+          - -220
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -807
+        - -224
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -640
+          - -260
+        -
+          - -640
+          - -220
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -647
+        - -224
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: async_rstb
+      points:
+        -
+          - -640
+          - -160
+        -
+          - -640
+          - -120
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: async_rstb
+      origin:
+        - -647
+        - -156
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: async_rstb
+instances:
+  I0:
+    lib_name: analogLib
+    cell_name: gnd
+    view_name: symbol
+    xform:
+      - -800
+      - 60
+      - R0
+    bbox:
+      - -810
+      - 20
+      - -726
+      - 64
+    connections:
+      gnd!: gnd!
+    params:
+      {}
+    is_primitive: true
+  VVDD:
+    lib_name: analogLib
+    cell_name: vdc
+    view_name: symbol
+    xform:
+      - -960
+      - 160
+      - R0
+    bbox:
+      - -1082
+      - 96
+      - -866
+      - 164
+    connections:
+      MINUS: VSS
+      PLUS: VDD
+    params:
+      vdc:
+        - 3
+        - vdd
+    is_primitive: true
+  VVSS:
+    lib_name: analogLib
+    cell_name: vdc
+    view_name: symbol
+    xform:
+      - -800
+      - 160
+      - R0
+    bbox:
+      - -922
+      - 96
+      - -706
+      - 164
+    connections:
+      MINUS: gnd!
+      PLUS: VSS
+    params:
+      vdc:
+        - 3
+        - 0
+    is_primitive: true
+  Vasync_rstb:
+    lib_name: analogLib
+    cell_name: vpwlf
+    view_name: symbol
+    xform:
+      - -640
+      - -160
+      - R0
+    bbox:
+      - -757
+      - -224
+      - -546
+      - -156
+    connections:
+      MINUS: VSS
+      PLUS: async_rstb
+    params:
+      fileName:
+        - 3
+        - async_rstb_pwl_file
+    is_primitive: true
+  Vrstb:
+    lib_name: analogLib
+    cell_name: vpwlf
+    view_name: symbol
+    xform:
+      - -960
+      - -160
+      - R0
+    bbox:
+      - -1077
+      - -224
+      - -866
+      - -156
+    connections:
+      MINUS: VSS
+      PLUS: rstb
+    params:
+      fileName:
+        - 3
+        - rstb_pwl_file
+    is_primitive: true
+  Vsetb:
+    lib_name: analogLib
+    cell_name: vpwlf
+    view_name: symbol
+    xform:
+      - -800
+      - -160
+      - R0
+    bbox:
+      - -917
+      - -224
+      - -706
+      - -156
+    connections:
+      MINUS: VSS
+      PLUS: setb
+    params:
+      fileName:
+        - 3
+        - setb_pwl_file
+    is_primitive: true
+  XDUT:
+    lib_name: bag3_digital
+    cell_name: rstb_nand_sr_latch_bora
+    view_name: symbol
+    xform:
+      - -200
+      - -120
+      - R0
+    bbox:
+      - -204
+      - -124
+      - 358
+      - 200
+    connections:
+      VDD: VDD
+      VSS: VSS
+      async_rstb: async_rstb
+      q: q
+      q_b: q_b
+      rstb: rstb
+      setb: setb
+    params:
+      {}
+    is_primitive: false
+props:
+  connectivityLastUpdated:
+    - 0
+    - 650
+  instance#:
+    - 0
+    - 1
+  lastSchematicExtraction:
+    - 4
+    - time_val: 1565123910
+  net#:
+    - 0
+    - 1
+  schGeometryLastUpdated:
+    - 0
+    - 650
+  schGeometryVersion:
+    - 3
+    - sch.ds.gm.1.4
+  schXtrVersion:
+    - 3
+    - sch.10.0
+app_defs:
+  _dbLastSavedCounter:
+    - 0
+    - 650
+  _dbvCvTimeStamp:
+    - 0
+    - 650
+  cdbRevision:
+    - 0
+    - 227612

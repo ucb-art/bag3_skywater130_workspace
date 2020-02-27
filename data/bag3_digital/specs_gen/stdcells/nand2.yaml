@@ -1,0 +1,37 @@
+lay_class: bag3_digital.layout.stdcells.util.STDCellWrapper
+impl_lib: AAA_NAND2
+impl_cell: NAND2
+root_dir: gen_outputs/nand2
+
+
+params:
+  cls_name: bag3_digital.layout.stdcells.gates.NAND2Core
+  params:
+    seg_p: 1
+    seg_n: 1
+    w_p: 110
+    w_n: 84
+
+    pinfo:
+      lch: 30
+      top_layer: 4
+      row_specs:
+        - mos_type: nch
+          width: 84
+          threshold: standard
+          bot_wires:
+            data: ['sup', 'sig<0:1>']
+            shared: ['sup']
+          top_wires: ['sig<0:1>']
+          flip: True
+        - mos_type: pch
+          width: 110
+          threshold: standard
+          bot_wires: ['sig<0:1>']
+          top_wires:
+            data: ['sig<0:1>', 'sup']
+            shared: ['sup']
+      tr_widths:
+        sup: {2: 2}
+        sig: {2: 1}
+      tr_spaces: {}

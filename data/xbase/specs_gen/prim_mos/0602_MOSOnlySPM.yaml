@@ -1,0 +1,12 @@
+lay_class: xbase.layout.mos.top.GenericWrapper
+params:
+  cls_name: xbase_test.layout.mos.base.MOSOnlySPM
+  params:
+    lch: 30
+    fg: 10
+    fg_sp: 6
+    row_list:
+      - [nch, 84, lvt]
+      - [nch, 84, lvt]
+    min_ntr: 12
+    mos_sub: True

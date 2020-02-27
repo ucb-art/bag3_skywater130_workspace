@@ -1,6 +1,3 @@
-[submodule "data/bag3_digital"]
-	path = data/bag3_digital
-	url = git@github.com:bluecheetah/skywater130_bag3_digital_data.git
 [submodule "skywater130"]
 	path = skywater130
 	url = git@github.com:bluecheetah/skywater130.git
@@ -10,6 +7,3 @@
 [submodule "xbase"]
 	path = xbase
 	url = git@github.com:bluecheetah/xbase.git
-[submodule "bag3_digital"]
-	path = bag3_digital
-	url = git@github.com:bluecheetah/bag3_digital.git

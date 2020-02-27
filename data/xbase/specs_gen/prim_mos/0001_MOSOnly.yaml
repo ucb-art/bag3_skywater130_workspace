@@ -1,0 +1,8 @@
+lay_class: xbase_test.layout.mos.base.MOSOnly
+impl_lib: 'AAA_XBASE'
+impl_cell: 'MOSOnly_0001'
+params:
+  lch: 30
+  fg: 8
+  row_list:
+    - [pch, 110, standard]

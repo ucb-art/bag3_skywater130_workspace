@@ -1,6 +1,13 @@
 BAG_framework:
-  url: git@login1.bcanalog.com:bag/BAG_framework_release.git
+  url: git@10.8.0.1:bag/BAG_framework.git
+  branch: sim_refactor
 bag3_digital:
-  url: git@login1.bcanalog.com:bag/bag3_digital_release.git
+  url: git@10.8.0.1:bag/bag3_digital.git
+  branch: sim_refactor
+bag3_testbenches:
+  url: git@10.8.0.1:bag/bag3_testbenches.git
+  branch: sim_refactor
 xbase:
-  url: git@login1.bcanalog.com:bag/xbase_release.git
+  url: git@10.8.0.1:bag/xbase.git
+  branch: sim_refactor
+

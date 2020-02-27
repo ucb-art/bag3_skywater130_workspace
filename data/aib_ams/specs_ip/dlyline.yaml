@@ -1,0 +1,117 @@
+lay_class: bag.layout.util.IPMarginTemplate
+impl_lib: AAA_DLYDLINE
+impl_cell: skywater_dlyline
+root_dir: gen_outputs/ip_blocks/skywater_dlyline
+model_supply_wrap_mode: TOP
+model_type: VERILOG
+layout_type: GDS
+name_prefix: 'skywater_dlyline_'
+name_suffix: ''
+exact_cell_names: [skywater_dlyline]
+
+lef_config:
+  detail_layers: [3, 4, 5]
+
+params:
+  cls_name: xbase.layout.mos.top.GenericWrapper
+  params:
+    cls_name: aib_ams.layout.delay_line.DelayLine
+    params:
+      seg_dict:
+        dc_core:
+          in: 2
+          out: 2
+          sr: 1
+        bk_inv: 1
+      draw_taps: NONE
+      show_pins: True
+      num_rows: 5
+      num_cols: 13
+      num_insts: 64
+      substrate_row: True
+      tile0: 1
+      tile1: 3
+      tile_vss: 0
+      tile_vdd: 2
+      flop: False
+
+      pinfo:
+        tiles:
+          - name: ptap_tile
+          - name: logic_tile
+          - name: ntap_tile
+          - name: logic_tile
+            flip: True
+
+        tile_specs:
+          arr_info:
+            lch: 30
+            top_layer: 4
+            tr_widths: {}
+            tr_spaces: {}
+            ridx_n: 0
+            ridx_p: -1
+
+          place_info:
+            ptap_tile:
+              priority: 2
+              bot_mirror: False
+              top_mirror: False
+              row_specs:
+                - mos_type: ptap
+                  width: 84
+                  threshold: standard
+                  bot_wires: []
+                  top_wires:
+                    data: [sup]
+            logic_tile:
+              priority: 1
+              bot_mirror: False
+              top_mirror: False
+              row_specs:
+                - mos_type: nch
+                  width: 84
+                  threshold: standard
+                  bot_wires: ['sig<0:1>']
+                  top_wires: ['sig<0:1>']
+                  flip: True
+                - mos_type: pch
+                  width: 110
+                  threshold: standard
+                  bot_wires: ['sig<0:1>']
+                  top_wires: ['sig<0:1>']
+            ntap_tile:
+              priority: 2
+              bot_mirror: False
+              top_mirror: False
+              row_specs:
+                - mos_type: ntap
+                  width: 110
+                  threshold: standard
+                  bot_wires: []
+                  top_wires:
+                    data: [sup]
+
+          abut_list:
+            - [[ptap_tile, 1], [logic_tile, 0]]
+            - [[logic_tile, 1], [ntap_tile, 0]]
+            - [[ntap_tile, 1], [logic_tile, 1]]
+            - [[logic_tile, 0], [ptap_tile, 0]]
+
+model_params:
+  XCELL<63:0>:
+    XBKInv0: {view_name: ''}
+    XBKInv1: {view_name: ''}
+    XCore:
+      XNAND_SR0: {view_name: '', delay: 20}
+      XNAND_SR1: {view_name: '', delay: 20}
+      XNAND_in: {view_name: '', delay: 20}
+      XNAND_out: {view_name: '', delay: 20}
+  XDUM:
+    XBKInv0: {view_name: ''}
+    XBKInv1: {view_name: ''}
+    XCore:
+      XNAND_SR0: {view_name: '', delay: 20}
+      XNAND_SR1: {view_name: '', delay: 20}
+      XNAND_in: {view_name: '', delay: 20}
+      XNAND_out: {view_name: '', delay: 20}

@@ -1,0 +1,71 @@
+tbm_class: bag3_testbenches.measurement.dc.base.DCTB
+#lay_class: bag3_digital.layout.stdcells.util.STDCellWrapper
+sch_class: bag3_digital.schematic.inv.bag3_digital__inv
+root_dir: gen_outputs/vtc_inv_tbm
+impl_lib: AAA_MEAS_VTC_INV
+impl_cell: INV
+precision: 8
+
+params:
+#  cls_name: bag3_digital.layout.stdcells.gates.InvCore
+#  draw_taps: True
+#  params:
+#    pinfo:
+#      lch: 30
+#      top_layer: 4
+#      row_specs:
+#        - mos_type: nch
+#          width: 84
+#          threshold: standard
+#          bot_wires:
+#            data: ['sup', 'sig<0:1>']
+#            shared: ['sup']
+#          top_wires: ['sig<0:1>']
+#          flip: True
+#        - mos_type: pch
+#          width: 110
+#          threshold: standard
+#          bot_wires: ['sig<0:1>']
+#          top_wires:
+#            data: ['sig<0:1>', 'sup']
+#            shared: ['sup']
+#      tr_widths:
+#        sup: {2: 1}
+#        sig: {2: 1}
+#      tr_spaces: {}
+#    seg: 4
+  lch: 30
+  w_p: 110
+  w_n: 84
+  th_p: standard
+  th_n: standard
+  seg: 1
+
+tb_params: {}
+
+tbm_specs:
+  sim_envs: ['ff_25', 'ss_25', 'tt_25']
+  sim_params: {}
+
+  sweep_var: vin
+  sweep_options:
+    type: LINEAR
+    start: 0
+    stop: 1.8
+    num: 101
+  dut_pins: [in, out, VSS, VDD]
+  src_list:
+    - {type: vdc, lib: analogLib, value: vin, conns: {PLUS: in, MINUS: VSS}}
+  load_list: []
+  pwr_domain:
+    in: !!python/tuple [VSS, VDD]
+    out: !!python/tuple [VSS, VDD]
+  sup_values:
+    VDD:
+      tt_25: 1.8
+      ff_25: 1.8
+      ss_25: 1.8
+    VSS: 0.0
+  save_outputs: [in, out]
+  dc_options: {}
+  pin_values: {}
