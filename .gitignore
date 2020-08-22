@@ -34,6 +34,7 @@ BAGTMP
 spectre_run
 cdl_netlist
 gen_outputs
+gen_output
 test
 
 # cadence files
