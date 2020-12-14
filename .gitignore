@@ -53,6 +53,7 @@ map/
 si.env
 netlist
 simulation
+cadence_libs
 
 # calibre files
 calibreview.setup
