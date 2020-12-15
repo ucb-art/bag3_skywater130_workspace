@@ -11,6 +11,11 @@ Apache license.
 
 # Setting up
 
+0. BAG3 generators will successfully run on a subset of the BWRC servers, which particularly include: 
+
+* RedHat Linux v7. Running `uname -a` should yield a string that includes `el7`. 
+* RedHat DevTools v8, and several related packages. On relevant machines, enable these byt running `source scl_source enable devtoolset-8 rh-git29 httpd24`
+
 1. Clone the repository.
 
 2. In the workspace, update submodules:
