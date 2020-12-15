@@ -1,4 +1,6 @@
-# aib_ams_skywater130_release
+# aib_ams_skywater130_workspace 
+
+## BWRC Edition 
 
 open-source release of skywater aib_ams workspace.
 
@@ -18,23 +20,20 @@ git submodule update --init --recursive
 ```
 
 3. Change various environment files in `skywater130/workspace_setup` to match your settings.
-This will include the paths to tools found in the .bashrc file.
+This will include the paths to tools found in the .bashrc file. 
+
+A shortcut script `setup_script.sh` aids this process on the BWRC machines. 
+
+`bash setup_script.sh`
+
+This will also create pointers to the [OpenAccess](https://en.wikipedia.org/wiki/OpenAccess) and other BAG-related binaries. 
 
 4. Setup environment:
 ```
 source .bashrc
-```
+``` 
 
-5. Compile pybag if you have OpenAccess source code:
-
-```
-cd BAG_framework/pybag
-./run_test.sh
-```
-
-or obtain pre-compiled library from Blue Cheetah.
-
-6. Create cds.lib file:
+5. Create cds.lib file:
 ```
 echo 'INCLUDE $BAG_WORK_DIR/cds.lib.core' > cds.lib
 ```
