@@ -1,19 +1,34 @@
 #!/bin/bash
+set -e 
 
-# SPDX-License-Identifier: Apache-2.0
-# Copyright 2020 Blue Cheetah Analog Design Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Initial Workspace Setup 
+# 
+# * Link necessary OA binaries 
+# * Initialize git submodules 
+# * Create cds.lib 
+# * 
+
+
+if [[ -d pybag ]] || [[ -d cadence_libs ]] 
+then
+    echo "Bailing from setup.sh: one or more of the directories to be generated is already present!" 
+    echo "If this is an already-working workspace, run 'source scripts/work.sh' instead. "
+    exit 1 
+fi
+
+# Ensure sufficient gcc & related tools 
+source scl_source enable devtoolset-8 rh-git29 httpd24
+
+# Install submodules 
+git submodule update --init --recursive
+
+# Set up the run environment 
+source .bashrc
+
+# Ensure cds.lib is present 
+echo 'INCLUDE $BAG_WORK_DIR/cds.lib.core' > cds.lib
+
+
 
 if [ -z ${CDS_INST_DIR} ]
 then
