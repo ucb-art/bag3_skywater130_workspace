@@ -42,7 +42,7 @@ Note it is intended to be `source`-ed, and to modify its parent environment.
 
 ## Testing 
 
-To (at any point) check for valid installation and configuration, run the `scripts/test.sh` script. 
+To (at any point) check for valid installation and configuration, run the [scripts/test.sh](scripts/test.sh) script. 
 This will generate a set of simple schematics and layouts from `bag3_digital`. 
 If successful,  you'll be met with output like so: 
 
