@@ -19,17 +19,16 @@ BAG3 will successfully run on a subset of the BWRC servers, which particularly i
 After cloning, run: 
 
 ```
+bash scripts/setup.sh
 cd BAG_framework/pybag
 ./run_test.sh
 cd ../..
-bash scripts/setup.sh
 ```
-run_test.sh will compile the C++ core locally. 
 
 [Scripts/setup.sh](scripts/setup.sh) will perform a number of one-time setup activities, including cloning submodules, linking several binary libraries, 
 and initializing Virtuoso libraries. Note invoking this script with `bash` (and not `source`) *will not* modify the existing environment. 
 
-
+run_test.sh will compile the C++ core locally.
 ## Working 
 
 To start working, run:
