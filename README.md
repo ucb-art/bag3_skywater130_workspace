@@ -1,4 +1,3 @@
-
 # BAG3 SkyWater130 Template Workspace 
 
 For use on BWRC infrastructure 
@@ -25,7 +24,6 @@ bash scripts/setup.sh
 
 [Scripts/setup.sh](scripts/setup.sh) will perform a number of one-time setup activities, including cloning submodules, linking several binary libraries, 
 and initializing Virtuoso libraries. Note invoking this script with `bash` (and not `source`) *will not* modify the existing environment. 
-
 
 ## Working 
 

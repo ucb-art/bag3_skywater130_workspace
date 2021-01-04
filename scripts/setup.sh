@@ -37,31 +37,6 @@ then
 fi
 
 
-# setup symlink to compiled pybag
-mkdir -p BAG_framework/pybag/_build/lib
-cd BAG_framework/pybag/_build/lib
-ln -s ${BAG_TOOLS_ROOT}/pybag .
-cd ../../../../
-
-# setup symlink for files
-##ln -s skywater130/workspace_setup/bag_config.yaml bag_config.yaml
-##ln -s skywater130/workspace_setup/bag_submodules.yaml bag_submodules.yaml
-##ln -s skywater130/workspace_setup/.bashrc .bashrc
-##ln -s skywater130/workspace_setup/.bashrc_bag .bashrc_bag
-##ln -s skywater130/workspace_setup/.cshrc .cshrc
-##ln -s skywater130/workspace_setup/.cshrc_bag .cshrc_bag
-##ln -s skywater130/workspace_setup/.cdsenv .cdsenv
-##ln -s skywater130/workspace_setup/.cdsinit .cdsinit
-##ln -s skywater130/workspace_setup/cds.lib.core cds.lib.core
-##ln -s skywater130/workspace_setup/display.drf display.drf
-##ln -s skywater130/workspace_setup/.gitignore .gitignore
-##ln -s skywater130/workspace_setup/leBindKeys.il leBindKeys.il
-##ln -s skywater130/workspace_setup/pvtech.lib pvtech.lib
-##ln -s BAG_framework/run_scripts/start_bag_ICADV12d3.il start_bag.il
-##ln -s BAG_framework/run_scripts/virt_server.sh virt_server.sh
-##ln -s BAG_framework/run_scripts/run_bag.sh run_bag.sh
-##ln -s BAG_framework/run_scripts/start_bag.sh start_bag.sh
-
 # setup cadence shared library linkage
 mkdir cadence_libs
 
@@ -104,3 +79,17 @@ for libname in "${lib_arr[@]}"; do
     fi
     ln -s ${fpath} cadence_libs/${libname}
 done
+
+
+# Compile BAG 
+cd BAG_framework/pybag
+./run_test.sh
+cd ../..
+
+# OR! setup symlink to compiled pybag
+##mkdir -p BAG_framework/pybag/_build/lib
+##cd BAG_framework/pybag/_build/lib
+##ln -s ${BAG_TOOLS_ROOT}/pybag .
+##cd ../../../../
+
+

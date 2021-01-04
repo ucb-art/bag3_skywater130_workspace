@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export PYTHONPATH="${BAG_FRAMEWORK}/src"
-export PYTHONPATH="${PYTHONPATH}:${BAG_TOOLS_ROOT}"
+export PYTHONPATH="${PYTHONPATH}:${BAG_FRAMEWORK}/pybag/_build/lib"
 export PYTHONPATH="${PYTHONPATH}:${BAG_TECH_CONFIG_DIR}/src"
 export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/aib_ams/src"
 export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/bag3_analog/src"

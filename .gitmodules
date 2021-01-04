@@ -3,7 +3,7 @@
 	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/bag_skywater130.git
 [submodule "BAG_framework"]
 	path = BAG_framework
-	url = git@github.com:bluecheetah/bag.git
+	url = git@github.com:ucb-art/bag.git
 [submodule "xbase"]
 	path = xbase
-	url = git@github.com:bluecheetah/xbase.git
+	url = git@github.com:ucb-art/xbase.git
