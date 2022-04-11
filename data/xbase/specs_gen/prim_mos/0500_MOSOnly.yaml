@@ -1,0 +1,9 @@
+lay_class: xbase.layout.mos.top.GenericWrapper
+params:
+  cls_name: xbase_test.layout.mos.base.MOSOnly
+  params:
+    lch: 30
+    fg: 8
+    row_list:
+      - [nch, 84, lvt]
+      - [pch, 110, lvt]

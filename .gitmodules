@@ -1,0 +1,9 @@
+[submodule "skywater130"]
+	path = skywater130
+	url = git@github.com:ucb-art/skywater-pdk-libs-sky130_bag3_pr.git
+[submodule "BAG_framework"]
+	path = BAG_framework
+	url = git@github.com:ucb-art/bag.git
+[submodule "xbase"]
+	path = xbase
+	url = git@github.com:ucb-art/xbase.git

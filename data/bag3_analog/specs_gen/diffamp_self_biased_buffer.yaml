@@ -1,0 +1,62 @@
+impl_lib: AAA_DiffAmpSelfBiasedBuffer
+impl_cell: TOP
+root_dir: gen_outputs/diffamp_self_biased_buffer
+model_supply_wrap_mode: TOP
+model_type: VERILOG
+name_prefix: ''
+name_suffix: ''
+exact_cell_names: [diffamp_self_biased_w_buffer]
+
+lay_class: xbase.layout.mos.top.GenericWrapper
+
+params:
+  cls_name: bag3_analog.layout.amplifier.diffamp.DiffAmpSelfBiased
+  params:
+    seg_dict:
+      tail_p: 24
+      gm_p: 12
+      gm_n: 2
+      tail_n: 4
+    draw_taps: BOTH
+
+    pinfo:
+      lch: 30
+      top_layer: 4
+      row_specs:
+        - mos_type: nch
+          width: 84
+          threshold: standard
+          bot_wires:
+            data: [sup, sig_in]
+            shared: [sup]
+          top_wires: [sig_in]
+          flip: True
+        - mos_type: nch
+          width: 84
+          threshold: standard
+          bot_wires:
+            - [['sig<0:1>', 'DS_MATCH']]
+          top_wires:
+            data:
+              - [['sig<0:1>', 'G']]
+              - [['sig_in<0:1>', 'G_MATCH']]
+          flip: True
+        - mos_type: pch
+          width: 110
+          threshold: standard
+          bot_wires:
+            data:
+              - [['sig<0:1>', 'G']]
+              - [['sig_in<0:1>', 'G_MATCH']]
+          top_wires:
+            - [['sig<0:1>', 'DS_MATCH']]
+        - mos_type: pch
+          width: 110
+          threshold: standard
+          bot_wires: [sig_in]
+          top_wires:
+            data: [sig_in, sup]
+            shared: [sup]
+      tr_widths:
+        sup: {2: 2}
+      tr_spaces: {}

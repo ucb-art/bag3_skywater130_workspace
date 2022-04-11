@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH="${BAG_FRAMEWORK}/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_FRAMEWORK}/pybag/_build/lib"
+export PYTHONPATH="${PYTHONPATH}:${BAG_TECH_CONFIG_DIR}/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/aib_ams/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/bag3_analog/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/bag3_digital/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/bag3_testbenches/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/bag3_testbenches/bag3_liberty/src"
+export PYTHONPATH="${PYTHONPATH}:${BAG_WORK_DIR}/xbase/src"
+export PYTHONPATH="${PYTHONPATH}:${PYTHONPATH_CUSTOM:-}"

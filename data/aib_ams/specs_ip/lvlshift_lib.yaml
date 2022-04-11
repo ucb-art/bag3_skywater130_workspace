@@ -1,0 +1,44 @@
+gen_specs_file: 'data/aib_ams/specs_ip/lvlshift.yaml'
+
+props:
+  cell_description: "POR Level Shifter."
+pwr_pins:
+  VDD_in: VDDIO
+  VDD: VDDCORE
+gnd_pins:
+  VSS: VSS
+stdcell_pwr_pins: [VDD, VSS]
+
+input_pins_defaults:
+  pwr_pin: VDD_in
+  gnd_pin: VSS
+  dw_rise: driver_waveform
+  dw_fall: driver_waveform
+
+input_pins:
+  - name: in
+
+inout_pins_defaults: {}
+inout_pins: {}
+
+cond_defaults:
+  in: 0
+
+output_pins_defaults:
+  pwr_pin: VDD
+  gnd_pin: VSS
+  max_fanout: 20
+
+output_pins:
+  - name: out
+    func: "in"
+    cap_info:
+      max_cap: 10.0e-15
+    timing_info:
+      - related: in
+        sense: positive_unate
+        cond: {}
+
+min_fanout: 0.5
+input_cap_min: 1.0e-15
+input_cap_range_scale: 0.2

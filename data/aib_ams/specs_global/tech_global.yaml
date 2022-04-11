@@ -1,0 +1,61 @@
+corners: ['tt', 'ff', 'ss', 'sf', 'fs']  # The corners supported by this process
+vdd: 1  # The nominal VDD of this process
+lch_min: 30  # The minimum channel length
+w_minn: 84  # Minimum width for devices in the process
+w_minp: 84  # Minimum width for devices in the process
+w_maxn: 120  # max width for devices in the process
+w_maxp: 120  # max width for devices in the process
+w_nomn: 120  # nom width for devices in the process
+w_nomp: 120  # nom width for devices in the process
+inv_beta: 1 # Ratio of PMOS segments to NMOS segments for balance rise/fall delay
+max_fanout: 10 # Nominal maximum allowed capacitive fanout
+min_fanout: 0.75 # Nominal minimum allowed capacitive fanout
+seg_min: 1
+thresholds: ['lvt', 'standard']  # Thresholds
+num_monte_carlo_runs: 100
+trf_nom: 30.0e-12
+A_vt_fin_n: 0.025
+A_vt_fin_p: 0.025
+A_beta_fin_n: 0.02
+A_beta_fin_p: 0.02
+
+cin_inv:
+  cin_per_seg: 0.2e-15
+  w_per_seg: 4
+
+dsn_envs:
+  slow:
+    env: ['ss_0']
+    vdd: 0.9
+    mc_env: ['mc_0']
+  center:
+    env: ['tt_25']
+    vdd: 1.0
+    mc_env: ['mc_25']
+  fast:
+    env: ['ff_70']
+    vdd: 1.1
+    mc_env: ['mc_70']
+  skew_p:
+    env: ['sf_25']
+    vdd: 1.0
+    mc_env: ['mc_25']
+  skew_n:
+    env: ['fs_25']
+    vdd: 1.0
+    mc_env: ['mc_25']
+
+signoff_envs:
+  vmax:
+    vdd: 1.1
+  all_corners:
+    envs: ['sf_25', 'fs_25', 'ss_25', 'ff_25', 'tt_25', 'mc_0', 'mc_25', 'mc_70']
+    vdd:
+      sf_25: 1.0
+      fs_25: 1.0
+      ss_25: 0.9
+      ff_25: 1.1
+      tt_25: 1.0
+      mc_0: 0.9
+      mc_25: 1.0
+      mc_70: 1.1

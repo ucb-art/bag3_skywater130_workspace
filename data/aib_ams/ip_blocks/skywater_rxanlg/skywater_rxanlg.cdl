@@ -1,0 +1,485 @@
+.INCLUDE /mnt/tools/PDK/skywater130_closed/V1.3.0/LVS/Calibre/source.cdl
+
+*.BIPOLAR
+*.RESI = 2000
+*.SCALE METER
+*.MEGA
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+.PARAM
+
+
+
+.SUBCKT nmos4_hv B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nhv l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_hvesd B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nhvesd l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_svt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_lvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nlowvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_standard B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hv B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phv l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hvesd B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phvesd l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_svt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B pshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_lvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B plowvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phighvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_standard B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B pshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_w84_l30_seg4 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=4 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg4 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=4 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_3 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg4
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg4
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_w84_l30_seg2 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=2 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg1 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=1 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_4 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg2
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain_1 in outb VDD VSS
+*.PININFO in:I outb:O VDD:B VSS:B
+XINV in outb VDD VSS / skywater_rxanlg_inv_4
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg6 b d g<1> g<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B s:B
+XN_11 b d g<1> m<5> / nmos4_standard l=150n nf=1 w=420n
+XN_10 b d g<1> m<4> / nmos4_standard l=150n nf=1 w=420n
+XN_9 b d g<1> m<3> / nmos4_standard l=150n nf=1 w=420n
+XN_8 b d g<1> m<2> / nmos4_standard l=150n nf=1 w=420n
+XN_7 b d g<1> m<1> / nmos4_standard l=150n nf=1 w=420n
+XN_6 b d g<1> m<0> / nmos4_standard l=150n nf=1 w=420n
+XN_5 b m<5> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_4 b m<4> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_3 b m<3> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_2 b m<2> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_1 b m<1> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_0 b m<0> g<0> s / nmos4_standard l=150n nf=1 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg4_1 b d g<1> g<0> m<3>
++ m<2> m<1> m<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B m<3>:B m<2>:B m<1>:B m<0>:B s:B
+XP_3 b m<3> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_2 b m<2> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_1 b m<1> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_0 b m<0> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_7 b d g<1> m<3> / pmos4_standard l=150n nf=1 w=550n
+XP_6 b d g<1> m<2> / pmos4_standard l=150n nf=1 w=550n
+XP_5 b d g<1> m<1> / pmos4_standard l=150n nf=1 w=550n
+XP_4 b d g<1> m<0> / pmos4_standard l=150n nf=1 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core inn inp rst_casc rst_outn rst_outp outn
++ outp VDD VSS
+*.PININFO inn:I inp:I rst_casc:I rst_outn:I rst_outp:I outn:O outp:O VDD:B VSS:B
+XINN VSS outp inn rst_casc VSS /
++ skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg6
+XINP VSS outn inp rst_casc VSS /
++ skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg6
+XPN VDD outp inn outn midp midp midp midp VDD /
++ skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg4_1
+XPP VDD outn inp outp midn midn midn midn VDD /
++ skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg4_1
+XPRSTN VDD outn rst_casc midn / pmos4_standard l=150n nf=2 w=550n
+XPRSTP VDD outp rst_casc midp / pmos4_standard l=150n nf=2 w=550n
+XRSTN VSS outn rst_outn VSS / nmos4_standard l=150n nf=2 w=420n
+XRSTP VSS outp rst_outp VSS / nmos4_standard l=150n nf=2 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core_w_drivers in inb rst_casc rst_out rst_outb
++ out outb VDD VSS
+*.PININFO in:I inb:I rst_casc:I rst_out:I rst_outb:I out:O outb:O VDD:B VSS:B
+XBUFN midn out VDD VSS / skywater_rxanlg_inv_chain_1
+XBUFP midp outb VDD VSS / skywater_rxanlg_inv_chain_1
+XCORE inb in rst_casc rst_outb rst_out midn midp VDD VSS /
++ skywater_rxanlg_lvshift_core
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_w84_l30_seg1 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=1 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_2 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg1
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain_3 in out outb VDD VSS
+*.PININFO in:I out:O outb:O VDD:B VSS:B
+XINV0 in outb VDD VSS / skywater_rxanlg_inv_2
+XINV1 outb out VDD VSS / skywater_rxanlg_inv_2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain_2 in outb VDD VSS
+*.PININFO in:I outb:O VDD:B VSS:B
+XINV in outb VDD VSS / skywater_rxanlg_inv_2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg4 b d g<1> g<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B s:B
+XN_3 b m<3> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_2 b m<2> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_1 b m<1> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_0 b m<0> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_7 b d g<1> m<3> / nmos4_standard l=150n nf=1 w=420n
+XN_6 b d g<1> m<2> / nmos4_standard l=150n nf=1 w=420n
+XN_5 b d g<1> m<1> / nmos4_standard l=150n nf=1 w=420n
+XN_4 b d g<1> m<0> / nmos4_standard l=150n nf=1 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg2_1 b d g<1> g<0> m<1>
++ m<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B m<1>:B m<0>:B s:B
+XP_1 b m<1> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_0 b m<0> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_3 b d g<1> m<1> / pmos4_standard l=150n nf=1 w=550n
+XP_2 b d g<1> m<0> / pmos4_standard l=150n nf=1 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core_1 inn inp rst_casc rst_outn rst_outp outn
++ outp VDD VSS
+*.PININFO inn:I inp:I rst_casc:I rst_outn:I rst_outp:I outn:O outp:O VDD:B VSS:B
+XINN VSS outp inn rst_casc VSS /
++ skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg4
+XINP VSS outn inp rst_casc VSS /
++ skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg4
+XPN VDD outp inn outn midp midp VDD /
++ skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg2_1
+XPP VDD outn inp outp midn midn VDD /
++ skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg2_1
+XPRSTN VDD outn rst_casc midn / pmos4_standard l=150n nf=2 w=550n
+XPRSTP VDD outp rst_casc midp / pmos4_standard l=150n nf=2 w=550n
+XRSTN VSS outn rst_outn VSS / nmos4_standard l=150n nf=2 w=420n
+XRSTP VSS outp rst_outp VSS / nmos4_standard l=150n nf=2 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core_w_drivers_1 in inb rst_casc rst_out
++ rst_outb out outb VDD VSS
+*.PININFO in:I inb:I rst_casc:I rst_out:I rst_outb:I out:O outb:O VDD:B VSS:B
+XBUFN midn out VDD VSS / skywater_rxanlg_inv_chain_2
+XBUFP midp outb VDD VSS / skywater_rxanlg_inv_chain_2
+XCORE inb in rst_casc rst_outb rst_out midn midp VDD VSS /
++ skywater_rxanlg_lvshift_core_1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift in rst_casc rst_out rst_outb out outb VDD VDD_in
++ VSS
+*.PININFO in:I rst_casc:I rst_out:I rst_outb:I out:O outb:O VDD:B VDD_in:B VSS:B
+XBUF in in_buf inb_buf VDD_in VSS / skywater_rxanlg_inv_chain_3
+XLEV in_buf inb_buf rst_casc rst_out rst_outb out outb VDD VSS /
++ skywater_rxanlg_lvshift_core_w_drivers_1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_w84_l30_seg10 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=10 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg10 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=10 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_6 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg10
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg10
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain_5 in outb VDD VSS
+*.PININFO in:I outb:O VDD:B VSS:B
+XINV in outb VDD VSS / skywater_rxanlg_inv_6
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg6 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=6 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core_2 inn inp outn outp VDD VSS
+*.PININFO inn:I inp:I outn:O outp:O VDD:B VSS:B
+XINN VSS outp inn VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg10
+XINP VSS outn inp VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg10
+XPN VDD outp outn VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg6
+XPP VDD outn outp VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg6
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_lvshift_core_w_drivers_2 in inb out outb VDD VSS
+*.PININFO in:I inb:I out:O outb:O VDD:B VSS:B
+XBUFN midn out VDD VSS / skywater_rxanlg_inv_chain_5
+XBUFP midp outb VDD VSS / skywater_rxanlg_inv_chain_5
+XCORE inb in midn midp VDD VSS / skywater_rxanlg_lvshift_core_2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg2 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=2 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_5 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg2
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain_4 in out outb VDD VSS
+*.PININFO in:I out:O outb:O VDD:B VSS:B
+XINV0 in outb VDD VSS / skywater_rxanlg_inv_3
+XINV1 outb out VDD VSS / skywater_rxanlg_inv_5
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_w84_l30_seg5 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=5 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_w110_l30_seg5 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=5 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_1 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg5
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg5
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv_chain in outb VDD VSS
+*.PININFO in:I outb:O VDD:B VSS:B
+XINV0 in mid<0> VDD VSS / skywater_rxanlg_inv_2
+XINV1 mid<0> out VDD VSS / skywater_rxanlg_inv_3
+XINV2 out outb VDD VSS / skywater_rxanlg_inv_1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg2 b d g<1> g<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B s:B
+XN_1 b m<1> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_0 b m<0> g<0> s / nmos4_standard l=150n nf=1 w=420n
+XN_3 b d g<1> m<1> / nmos4_standard l=150n nf=1 w=420n
+XN_2 b d g<1> m<0> / nmos4_standard l=150n nf=1 w=420n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nand_1 in<1> in<0> out VDD VSS
+*.PININFO in<1>:I in<0>:I out:O VDD:B VSS:B
+XN VSS out in<1> in<0> VSS / skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg2
+XP_1 VDD out in<1> VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg4
+XP_0 VDD out in<0> VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg4
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg4 b d g<1> g<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B s:B
+XP_3 b m<3> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_2 b m<2> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_1 b m<1> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_0 b m<0> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_7 b d g<1> m<3> / pmos4_standard l=150n nf=1 w=550n
+XP_6 b d g<1> m<2> / pmos4_standard l=150n nf=1 w=550n
+XP_5 b d g<1> m<1> / pmos4_standard l=150n nf=1 w=550n
+XP_4 b d g<1> m<0> / pmos4_standard l=150n nf=1 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nor_1 in<1> in<0> out VDD VSS
+*.PININFO in<1>:I in<0>:I out:O VDD:B VSS:B
+XN_1 VSS out in<1> VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg2
+XN_0 VSS out in<0> VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg2
+XP VDD out in<1> in<0> VDD / skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg4
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_aib_se2diff_match en enb inn inp outn outp VDD VSS
+*.PININFO en:I enb:I inn:I inp:I outn:O outp:O VDD:B VSS:B
+XBUFN nor_out outn VDD VSS / skywater_rxanlg_inv_chain
+XBUFP nand_out outp VDD VSS / skywater_rxanlg_inv_chain
+XNAND en inp nand_out VDD VSS / skywater_rxanlg_nand_1
+XNOR enb inn nor_out VDD VSS / skywater_rxanlg_nor_1
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_inv in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg1
+XP VDD out in VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_passgate en enb s d VDD VSS
+*.PININFO en:I enb:I s:I d:O VDD:B VSS:B
+XN VSS d en s / nmos4_standard l=150n nf=5 w=420n
+XP VDD d enb s / pmos4_standard l=150n nf=5 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_se_to_diff in outn outp VDD VSS
+*.PININFO in:I outn:O outp:O VDD:B VSS:B
+XINVN0 in midn_inv VDD VSS / skywater_rxanlg_inv_2
+XINVN1 midn_inv midp VDD VSS / skywater_rxanlg_inv_3
+XINVN2 midp outn VDD VSS / skywater_rxanlg_inv_1
+XINVP0 in midn_pass0 VDD VSS / skywater_rxanlg_inv
+XINVP1 midn_pass1 outp VDD VSS / skywater_rxanlg_inv_1
+XPASS VDD VSS midn_pass0 midn_pass1 VDD VSS / skywater_rxanlg_passgate
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg2 b d g<1> g<0> s
+*.PININFO b:B d:B g<1>:B g<0>:B s:B
+XP_1 b m<1> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_0 b m<0> g<0> s / pmos4_standard l=150n nf=1 w=550n
+XP_3 b d g<1> m<1> / pmos4_standard l=150n nf=1 w=550n
+XP_2 b d g<1> m<0> / pmos4_standard l=150n nf=1 w=550n
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nor in<1> in<0> out VDD VSS
+*.PININFO in<1>:I in<0>:I out:O VDD:B VSS:B
+XN_1 VSS out in<1> VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg1
+XN_0 VSS out in<0> VSS / skywater_rxanlg_nmos4_standard_w84_l30_seg1
+XP VDD out in<1> in<0> VDD / skywater_rxanlg_pmos4_standard_stack2_w110_l30_seg2
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_nand in<1> in<0> out VDD VSS
+*.PININFO in<1>:I in<0>:I out:O VDD:B VSS:B
+XN VSS out in<1> in<0> VSS / skywater_rxanlg_nmos4_standard_stack2_w84_l30_seg4
+XP_1 VDD out in<1> VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg6
+XP_0 VDD out in<0> VDD / skywater_rxanlg_pmos4_standard_w110_l30_seg6
+.ENDS
+
+
+.SUBCKT skywater_rxanlg_aib_se2diff en enb in outn outp VDD VSS
+*.PININFO en:I enb:I in:I outn:O outp:O VDD:B VSS:B
+XCORE inb outp outn VDD VSS / skywater_rxanlg_se_to_diff
+XDUM enb VDD nc VDD VSS / skywater_rxanlg_nor
+XNAND en in inb VDD VSS / skywater_rxanlg_nand
+.ENDS
+
+
+.SUBCKT skywater_rxanlg clk_en data_en iclkn iopad por oclkn oclkp odat
++ odat_async por_vccl porb_vccl VDDCore VDDIO VSS
+*.PININFO clk_en:I data_en:I iclkn:I iopad:I por:I oclkn:O oclkp:O odat:O
+*+ odat_async:O por_vccl:O porb_vccl:O VDDCore:B VDDIO:B VSS:B
+XDUM VSS unused<0> VDDCore VSS / skywater_rxanlg_inv_3
+XINV odatb odat_async VDDCore VSS / skywater_rxanlg_inv_3
+XLV_CLK oclkp_vccl oclkn_vccl porb_buf por_buf VSS oclkp oclkn VDDCore VSS /
++ skywater_rxanlg_lvshift_core_w_drivers
+XLV_CLK_EN clk_en porb_vccl por_vccl VSS clk_en_vccl clk_enb_vccl VDDIO VDDCore
++ VSS / skywater_rxanlg_lvshift
+XLV_DATA odatp_vccl odatn_vccl porb_buf por_buf VSS odat odatb VDDCore VSS /
++ skywater_rxanlg_lvshift_core_w_drivers
+XLV_DATA_EN data_en porb_vccl por_vccl VSS data_en_vccl data_enb_vccl VDDIO
++ VDDCore VSS / skywater_rxanlg_lvshift
+XLV_DUM dump dumn unused<1> unused<2> VDDIO VSS /
++ skywater_rxanlg_lvshift_core_w_drivers_2
+XLV_POR por_buf porb_buf por_vccl porb_vccl VDDIO VSS /
++ skywater_rxanlg_lvshift_core_w_drivers_2
+XPOR por por_buf porb_buf VDDCore VSS / skywater_rxanlg_inv_chain_4
+XPOR_DUM VSS dump dumn VDDCore VSS / skywater_rxanlg_inv_chain_4
+XSE_CLK clk_en_vccl clk_enb_vccl iclkn iopad oclkn_vccl oclkp_vccl VDDIO VSS /
++ skywater_rxanlg_aib_se2diff_match
+XSE_DATA data_en_vccl data_enb_vccl iopad odatn_vccl odatp_vccl VDDIO VSS /
++ skywater_rxanlg_aib_se2diff
+.ENDS

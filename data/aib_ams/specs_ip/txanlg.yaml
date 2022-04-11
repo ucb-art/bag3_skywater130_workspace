@@ -1,0 +1,131 @@
+lay_class: bag.layout.util.IPMarginTemplate
+impl_lib: AAA_TXANLG
+impl_cell: skywater_txanlg
+root_dir: gen_outputs/ip_blocks/skywater_txanlg
+model_supply_wrap_mode: TOP
+model_type: VERILOG
+layout_type: GDS
+name_prefix: 'skywater_txanlg_'
+name_suffix: ''
+exact_cell_names: [skywater_txanlg]
+
+lef_config:
+  detail_layers: [3, 4, 5]
+
+params:
+  cls_name: xbase.layout.mos.top.GenericWrapper
+  params:
+    cls_name: aib_ams.layout.txanlg.TXAnalog
+    params:
+      pinfo:
+        lch: 30
+        top_layer: 4
+        row_specs:
+          - mos_type: nch
+            width: 84
+            threshold: standard
+            bot_wires:
+              data:
+                - wires: ['sup', 'sig<0:2>']
+                - wires: ['sig<0>', 'padout']
+              shared: [sup]
+            top_wires: ['sig<0:2>']
+            flip: True
+          - mos_type: pch
+            width: 110
+            threshold: standard
+            top_wires:
+              data:
+                - wires: ['sig<0:2>', 'sup']
+                - wires: ['padout', 'sig<2>']
+              shared: [sup]
+            bot_wires: ['sig<0:2>']
+        tr_widths: {}
+        tr_spaces: {}
+
+      buf_ctrl_lv_params:
+        segn_list: [1, 1]
+        segp_list: [1, 1]
+        w_n: 84
+        w_p: 110
+      buf_data_lv_params:
+        segn_list: [2, 2]
+        segp_list: [2, 2]
+        w_n: 84
+        w_p: 110
+      ctrl_lv_params:
+        buf_seg_list: [1]
+        seg_dict: {pd: 6, prst: 2, pu: 4, rst: 2}
+        stack_p: 2
+        in_upper: True
+        w_dict: {pd: 84, pu: 110, rst: 84}
+      data_lv_params:
+        buf_segn_list: [8]
+        buf_segp_list: [4]
+        seg_dict: {pd: 6, prst: 2, pu: 4, rst: 2}
+        stack_p: 2
+        in_upper: True
+        w_dict: {pd: 84, pu: 110, rst: 84}
+      drv_params:
+        pupd_params: {seg_n: 1, seg_p: 1, stack: 4, w_n: 84, w_p: 110}
+        unit_params: {seg_n: 8, seg_nand: 4, seg_nor: 4, seg_p: 8, w_n: 84, w_n_nand: 84,
+                      w_n_nor: 84, w_p: 110, w_p_nand: 110, w_p_nor: 110}
+
+model_params:
+  XDRV:
+    XPUPD: {view_name: ''}
+    XSUM: {view_name: ''}
+    XUNIT<5:0>:
+      XNAND: {view_name: ''}
+      XNOR: {view_name: ''}
+      Xpupd: {view_name: ''}
+  XLV_DIN:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFN:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}
+  XLV_ITX_EN:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFN:
+        XINV: {view_name: ''}
+      XBUFP:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}
+  XLV_NDRV<1:0>:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFP:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}
+  XLV_PD:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFN:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}
+  XLV_PDRV<1:0>:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFN:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}
+  XLV_PU:
+    XBUF:
+      XINV0: {view_name: ''}
+      XINV1: {view_name: ''}
+    XLEV:
+      XBUFN:
+        XINV: {view_name: ''}
+      XCORE: {view_name: ''}

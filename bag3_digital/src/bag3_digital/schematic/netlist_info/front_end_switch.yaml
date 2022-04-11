@@ -1,0 +1,530 @@
+lib_name: bag3_digital
+cell_name: front_end_switch
+view_name: schematic
+bbox:
+  - -361
+  - -198
+  - 70
+  - 138
+terminals:
+  RST:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: ipin
+          view_name: symbol
+          xform:
+            - -270
+            - -20
+            - R0
+          bbox:
+            - -327
+            - -46
+            - -270
+            - -10
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -300
+            - -20
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 0
+  RSTB:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: ipin
+          view_name: symbol
+          xform:
+            - -270
+            - -40
+            - R0
+          bbox:
+            - -327
+            - -66
+            - -270
+            - -30
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -300
+            - -40
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 0
+  VSS:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: iopin
+          view_name: symbolr
+          xform:
+            - -240
+            - -100
+            - R0
+          bbox:
+            - -301
+            - -126
+            - -230
+            - -90
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -265
+            - -100
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 2
+    ttype: 2
+  v_out:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: opin
+          view_name: symbol
+          xform:
+            - -220
+            - 0
+            - R0
+          bbox:
+            - -220
+            - -26
+            - -163
+            - 10
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -195
+            - 0
+          alignment: 1
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 1
+  v_ref_in:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: ipin
+          view_name: symbol
+          xform:
+            - -270
+            - 20
+            - R0
+          bbox:
+            - -327
+            - -6
+            - -270
+            - 30
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -300
+            - 20
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 0
+  v_sig_in:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: ipin
+          view_name: symbol
+          xform:
+            - -270
+            - 40
+            - R0
+          bbox:
+            - -327
+            - 14
+            - -270
+            - 50
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -300
+            - 40
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 0
+shapes:
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - -30
+          - -90
+        -
+          - -30
+          - 30
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: v_sig_in
+      points:
+        -
+          - -140
+          - 30
+        -
+          - -60
+          - 30
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: v_ref_in
+      points:
+        -
+          - -140
+          - -90
+        -
+          - -60
+          - -90
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: v_out
+      points:
+        -
+          - 0
+          - 30
+        -
+          - 70
+          - 30
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: v_out
+      points:
+        -
+          - 70
+          - -90
+        -
+          - 70
+          - 30
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: v_out
+      points:
+        -
+          - 0
+          - -90
+        -
+          - 70
+          - -90
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTB
+      points:
+        -
+          - -30
+          - 70
+        -
+          - -30
+          - 110
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RST
+      points:
+        -
+          - -30
+          - -170
+        -
+          - -30
+          - -130
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: v_sig_in
+      origin:
+        - -120
+        - 37
+      alignment: 5
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: v_sig_in
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: v_ref_in
+      origin:
+        - -120
+        - -83
+      alignment: 5
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: v_ref_in
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: v_out
+      origin:
+        - 63
+        - -30
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: v_out
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RST
+      origin:
+        - -37
+        - -160
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RST
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTB
+      origin:
+        - -37
+        - 100
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTB
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - -37
+        - -30
+      alignment: 5
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+instances:
+  XREF:
+    lib_name: BAG_prim
+    cell_name: nmos4_standard
+    view_name: symbol
+    xform:
+      - -30
+      - -130
+      - MXR90
+    bbox:
+      - -64
+      - -198
+      - 15
+      - 2
+    connections:
+      B: VSS
+      D: v_out
+      G: RST
+      S: v_ref_in
+    params:
+      l:
+        - 3
+        - 18n
+      nf:
+        - 3
+        - 2
+      w:
+        - 3
+        - 4
+    is_primitive: true
+  XSIG:
+    lib_name: BAG_prim
+    cell_name: nmos4_standard
+    view_name: symbol
+    xform:
+      - -30
+      - 70
+      - R270
+    bbox:
+      - -64
+      - -62
+      - 15
+      - 138
+    connections:
+      B: VSS
+      D: v_out
+      G: RSTB
+      S: v_sig_in
+    params:
+      l:
+        - 3
+        - 18n
+      nf:
+        - 3
+        - 2
+      w:
+        - 3
+        - 4
+    is_primitive: true
+props:
+  connectivityLastUpdated:
+    - 0
+    - 3450
+  lastSchematicExtraction:
+    - 4
+    - time_val: 1580755943
+  net#:
+    - 0
+    - 2
+  pin#:
+    - 0
+    - 12
+  schGeometryLastUpdated:
+    - 0
+    - 3450
+  schGeometryVersion:
+    - 3
+    - sch.ds.gm.1.4
+  schXtrVersion:
+    - 3
+    - sch.10.0
+app_defs:
+  _dbLastSavedCounter:
+    - 0
+    - 3450
+  _dbvCvTimeStamp:
+    - 0
+    - 3450
+  cdbRevision:
+    - 0
+    - 227612
+  cdnSPDesignMajorVersion:
+    - 0
+    - 2

@@ -1,0 +1,149 @@
+.INCLUDE /mnt/tools/PDK/skywater130_closed/V1.3.0/LVS/Calibre/source.cdl
+
+*.BIPOLAR
+*.RESI = 2000
+*.SCALE METER
+*.MEGA
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+.PARAM
+
+
+
+.SUBCKT nmos4_hv B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nhv l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_hvesd B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nhvesd l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_svt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_lvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nlowvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT nmos4_standard B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B nshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hv B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phv l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hvesd B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phvesd l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_svt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B pshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_lvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B plowvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_hvt B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B phighvt l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+.SUBCKT pmos4_standard B D G S
+*.PININFO B:B D:B G:B S:B
+MM0 D G S B pshort l=l*1.0e6 w=w*1.0e6 m=nf mult=1
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_nmos4_standard_w84_l30_seg2 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=2 w=420n
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_pmos4_standard_w110_l30_seg4 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=4 w=550n
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_inv_1 in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_lvlshift_nmos4_standard_w84_l30_seg2
+XP VDD out in VDD / skywater_lvlshift_pmos4_standard_w110_l30_seg4
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_inv_chain_1 in out outb VDD VSS
+*.PININFO in:I out:O outb:O VDD:B VSS:B
+XINV0 in outb VDD VSS / skywater_lvlshift_inv_1
+XINV1 outb out VDD VSS / skywater_lvlshift_inv_1
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_nmos4_standard_w84_l30_seg4 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=4 w=420n
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_inv in out VDD VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XN VSS out in VSS / skywater_lvlshift_nmos4_standard_w84_l30_seg4
+XP VDD out in VDD / skywater_lvlshift_pmos4_standard_w110_l30_seg4
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_inv_chain in outb VDD VSS
+*.PININFO in:I outb:O VDD:B VSS:B
+XINV in outb VDD VSS / skywater_lvlshift_inv
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_nmos4_standard_w84_l30_seg8 b d g s
+*.PININFO b:B d:B g:B s:B
+XN b d g s / nmos4_standard l=150n nf=8 w=420n
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_pmos4_standard_w110_l30_seg2 b d g s
+*.PININFO b:B d:B g:B s:B
+XP b d g s / pmos4_standard l=150n nf=2 w=550n
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_lvshift_core inn inp outn outp VDD VSS
+*.PININFO inn:I inp:I outn:O outp:O VDD:B VSS:B
+XINN VSS outp inn VSS / skywater_lvlshift_nmos4_standard_w84_l30_seg8
+XINP VSS outn inp VSS / skywater_lvlshift_nmos4_standard_w84_l30_seg8
+XPN VDD outp outn VDD / skywater_lvlshift_pmos4_standard_w110_l30_seg2
+XPP VDD outn outp VDD / skywater_lvlshift_pmos4_standard_w110_l30_seg2
+.ENDS
+
+
+.SUBCKT skywater_lvlshift_lvshift_core_w_drivers in inb out VDD VSS
+*.PININFO in:I inb:I out:O VDD:B VSS:B
+XBUFN midn out VDD VSS / skywater_lvlshift_inv_chain
+XCORE inb in midn midp VDD VSS / skywater_lvlshift_lvshift_core
+.ENDS
+
+
+.SUBCKT skywater_lvlshift in out VDD VDD_in VSS
+*.PININFO in:I out:O VDD:B VDD_in:B VSS:B
+XBUF in in_buf inb_buf VDD_in VSS / skywater_lvlshift_inv_chain_1
+XLEV in_buf inb_buf out VDD VSS / skywater_lvlshift_lvshift_core_w_drivers
+.ENDS

@@ -1,0 +1,945 @@
+lib_name: bag3_testbenches
+cell_name: clock_buf_tb
+view_name: schematic
+bbox:
+  - -682
+  - -210
+  - 364
+  - 380
+terminals:
+  {}
+shapes:
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: clk
+      points:
+        -
+          - -420
+          - -10
+        -
+          - -420
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: clk
+      origin:
+        - -427
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: clk
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -420
+          - -110
+        -
+          - -420
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -427
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: clk
+      points:
+        -
+          - -330
+          - -30
+        -
+          - -290
+          - -30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: clk
+      origin:
+        - -294
+        - -23
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: clk
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -330
+          - -50
+        -
+          - -290
+          - -50
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -294
+        - -43
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: clkb
+      points:
+        -
+          - -270
+          - -10
+        -
+          - -270
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: clkb
+      origin:
+        - -277
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: clkb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - -270
+          - -110
+        -
+          - -270
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - -277
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -200
+          - 50
+        -
+          - -200
+          - 90
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -207
+        - 86
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - -200
+          - 340
+        -
+          - -200
+          - 380
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - -207
+        - 344
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RST
+      points:
+        -
+          - -50
+          - 250
+        -
+          - -10
+          - 250
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RST
+      origin:
+        - -46
+        - 257
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RST
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTB
+      points:
+        -
+          - -50
+          - 230
+        -
+          - -10
+          - 230
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTB
+      origin:
+        - -46
+        - 237
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTB
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTD
+      points:
+        -
+          - -50
+          - 190
+        -
+          - -10
+          - 190
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTD
+      origin:
+        - -46
+        - 197
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: clk
+      points:
+        -
+          - -390
+          - 250
+        -
+          - -350
+          - 250
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: clk
+      origin:
+        - -354
+        - 257
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: clk
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: clkb
+      points:
+        -
+          - -390
+          - 230
+        -
+          - -350
+          - 230
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: clkb
+      origin:
+        - -354
+        - 237
+      alignment: 8
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: clkb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - 270
+          - -110
+        -
+          - 270
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - 263
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTBD
+      points:
+        -
+          - -50
+          - 210
+        -
+          - -10
+          - 210
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTBD
+      origin:
+        - -46
+        - 217
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTBD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - -560
+          - -10
+        -
+          - -560
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - -567
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -560
+          - -110
+        -
+          - -560
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -567
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -480
+          - -170
+        -
+          - -480
+          - -130
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -487
+        - -166
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - -40
+          - -110
+        -
+          - -40
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - -47
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RST
+      points:
+        -
+          - -40
+          - -10
+        -
+          - -40
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RST
+      origin:
+        - -47
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RST
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - 60
+          - -110
+        -
+          - 60
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - 53
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTB
+      points:
+        -
+          - 60
+          - -10
+        -
+          - 60
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTB
+      origin:
+        - 53
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTB
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: gnd!
+      points:
+        -
+          - 170
+          - -110
+        -
+          - 170
+          - -70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: gnd!
+      origin:
+        - 163
+        - -74
+      alignment: 8
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: gnd!
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTD
+      points:
+        -
+          - 170
+          - -10
+        -
+          - 170
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTD
+      origin:
+        - 163
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: RSTBD
+      points:
+        -
+          - 270
+          - -10
+        -
+          - 270
+          - 30
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: RSTBD
+      origin:
+        - 263
+        - -6
+      alignment: 2
+      orient: R90
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: RSTBD
+instances:
+  CLK:
+    lib_name: analogLib
+    cell_name: vpulse
+    view_name: symbol
+    xform:
+      - -420
+      - -10
+      - R0
+    bbox:
+      - -537
+      - -74
+      - -326
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: clk
+    params:
+      per:
+        - 3
+        - tper
+      tf:
+        - 3
+        - tr
+      tr:
+        - 3
+        - tr
+      v1:
+        - 3
+        - vclk1
+      v2:
+        - 3
+        - vclk2
+    is_primitive: true
+  CLK_Inv:
+    lib_name: analogLib
+    cell_name: vcvs
+    view_name: symbol
+    xform:
+      - -270
+      - -10
+      - R0
+    bbox:
+      - -377
+      - -74
+      - -153
+      - 3
+    connections:
+      MINUS: VDD
+      NC+: clk
+      NC-: gnd!
+      PLUS: clkb
+    params:
+      egain:
+        - 3
+        - -1.0
+    is_primitive: true
+  Crst:
+    lib_name: analogLib
+    cell_name: cap
+    view_name: symbol
+    xform:
+      - -40
+      - -10
+      - R0
+    bbox:
+      - -162
+      - -74
+      - 54
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: RST
+    params:
+      c:
+        - 3
+        - c_rst
+    is_primitive: true
+  Crstb:
+    lib_name: analogLib
+    cell_name: cap
+    view_name: symbol
+    xform:
+      - 60
+      - -10
+      - R0
+    bbox:
+      - -62
+      - -74
+      - 154
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: RSTB
+    params:
+      c:
+        - 3
+        - c_rstb
+    is_primitive: true
+  Crstbd:
+    lib_name: analogLib
+    cell_name: cap
+    view_name: symbol
+    xform:
+      - 270
+      - -10
+      - R0
+    bbox:
+      - 148
+      - -74
+      - 364
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: RSTBD
+    params:
+      c:
+        - 3
+        - c_rstbd
+    is_primitive: true
+  Crstd:
+    lib_name: analogLib
+    cell_name: cap
+    view_name: symbol
+    xform:
+      - 170
+      - -10
+      - R0
+    bbox:
+      - 48
+      - -74
+      - 264
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: RSTD
+    params:
+      c:
+        - 3
+        - c_rstd
+    is_primitive: true
+  I0:
+    lib_name: analogLib
+    cell_name: gnd
+    view_name: symbol
+    xform:
+      - -480
+      - -170
+      - R0
+    bbox:
+      - -490
+      - -210
+      - -406
+      - -166
+    connections:
+      gnd!: gnd!
+    params:
+      {}
+    is_primitive: true
+  VD:
+    lib_name: analogLib
+    cell_name: vdc
+    view_name: symbol
+    xform:
+      - -560
+      - -10
+      - R0
+    bbox:
+      - -682
+      - -74
+      - -466
+      - -6
+    connections:
+      MINUS: gnd!
+      PLUS: VDD
+    params:
+      vdc:
+        - 3
+        - vdd
+    is_primitive: true
+  XDUT_wrap:
+    lib_name: bag3_testbenches
+    cell_name: clock_buf_wrapper
+    view_name: symbol
+    xform:
+      - -350
+      - 90
+      - R0
+    bbox:
+      - -354
+      - 86
+      - -46
+      - 344
+    connections:
+      CLK: clk
+      CLKB: clkb
+      RST: RST
+      RSTB: RSTB
+      RSTBD: RSTBD
+      RSTD: RSTD
+      VDD: VDD
+      VSS: gnd!
+    params:
+      {}
+    is_primitive: false
+props:
+  connectivityLastUpdated:
+    - 0
+    - 2286
+  instance#:
+    - 0
+    - 1
+  lastSchematicExtraction:
+    - 4
+    - time_val: 1565381693
+  schGeometryLastUpdated:
+    - 0
+    - 2286
+  schGeometryVersion:
+    - 3
+    - sch.ds.gm.1.4
+  schXtrVersion:
+    - 3
+    - sch.10.0
+app_defs:
+  _dbLastSavedCounter:
+    - 0
+    - 2286
+  _dbvCvTimeStamp:
+    - 0
+    - 2286
+  cdbRevision:
+    - 0
+    - 227612

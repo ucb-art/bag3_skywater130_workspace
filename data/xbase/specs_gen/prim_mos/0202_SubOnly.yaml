@@ -1,0 +1,10 @@
+lay_class: xbase.layout.mos.top.GenericWrapper
+impl_lib: 'AAA_XBASE'
+impl_cell: 'SubOnly_0202'
+params:
+  cls_name: xbase_test.layout.mos.base.SubOnly
+  params:
+    lch: 30
+    fg: 8
+    row_list:
+      - [ntap, 110, lvt]

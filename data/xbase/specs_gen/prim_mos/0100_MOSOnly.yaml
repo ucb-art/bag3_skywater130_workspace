@@ -1,0 +1,10 @@
+lay_class: xbase.layout.mos.top.GenericWrapper
+impl_lib: 'AAA_XBASE'
+impl_cell: 'MOSOnly_0100'
+params:
+  cls_name: xbase_test.layout.mos.base.MOSOnly
+  params:
+    lch: 30
+    fg: 8
+    row_list:
+      - [nch, 110, lvt]
