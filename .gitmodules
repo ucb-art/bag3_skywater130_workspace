@@ -16,3 +16,6 @@
 [submodule "skywater130"]
 	path = skywater130
 	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/bag_skywater130.git
+[submodule "xbase"]
+	path = xbase
+	url = git@github.com:ucb-art/xbase.git
