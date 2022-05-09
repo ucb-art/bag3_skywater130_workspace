@@ -19,3 +19,6 @@
 [submodule "xbase"]
 	path = xbase
 	url = git@github.com:ucb-art/xbase.git
+[submodule "data/bag3_digital"]
+	path = data/bag3_digital
+	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_bag3_digital_data
