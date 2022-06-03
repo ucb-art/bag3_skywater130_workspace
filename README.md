@@ -65,6 +65,7 @@ SkyWater130, like most planar technologies, *does not* produce LVS-clean BAG sch
 Note each of the runs in [scripts/test.sh](scripts/test.sh) uses BAG's `-raw` option to directly produce GDS. 
 Attempts to use generated Virtuoso schematics will typically produce (intractable) LVS errors. 
 
+If you would like to use abstract generation, there are a few issues to be aware of. More details available of the issues surrounding abstract generation and additional setup instructions in [the tech plugin abstract setup README.](skywater130/abstract_setup/README.md)
 
 ## Licensing
 
