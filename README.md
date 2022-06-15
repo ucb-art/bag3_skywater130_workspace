@@ -16,14 +16,18 @@ BAG3 will successfully run on a subset of the BWRC servers, which particularly i
 
 ## Initial Setup 
 
-After cloning, run: 
+After cloning, do the following:
 
-```
-bash scripts/setup.sh
-```
-
-[Scripts/setup.sh](scripts/setup.sh) will perform a number of one-time setup activities, including cloning submodules, linking several binary libraries, 
-and initializing Virtuoso libraries. Note invoking this script with `bash` (and not `source`) *will not* modify the existing environment. 
+1. ssh to a server that supports RHEL7, or use bsub on the rhel7i queue.
+2. add this to your home .bashrc so that devtoolset is enabled everytime a new terminal is opened: `source scl_source enable devtoolset-8 rh-git29 httpd24`
+3. Start bash
+4. `git submodule update --init --recursive`
+5. Create a new cds.lib as follows: `echo "INCLUDE cds.lib.core" >> cds.lib`
+6. `source .bashrc`
+7. `cd BAG_framework/pybag`
+8. `./run_test.sh`
+9. `cd ../..`
+10. Run just lines 55 and 56 of [setup_script.sh](setup_script.sh) to create symlinks to storage places in /tools/scratch.
 
 ## Working 
 
@@ -59,11 +63,6 @@ The content of [scripts/test.sh](scripts/test.sh) includes the run-commands, whi
 
 
 ## Caveats 
-
-SkyWater130, like most planar technologies, *does not* produce LVS-clean BAG schematics. 
-*Templates* are still designed in Virtuoso schematics, but their *generated output* is relevant only in netlist form. 
-Note each of the runs in [scripts/test.sh](scripts/test.sh) uses BAG's `-raw` option to directly produce GDS. 
-Attempts to use generated Virtuoso schematics will typically produce (intractable) LVS errors. 
 
 If you would like to use abstract generation, there are a few issues to be aware of. More details available of the issues surrounding abstract generation and additional setup instructions in [the tech plugin abstract setup README.](skywater130/abstract_setup/README.md)
 
