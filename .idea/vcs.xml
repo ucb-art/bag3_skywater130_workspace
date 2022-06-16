@@ -9,7 +9,11 @@
     <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics/pybind11" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/BAG_framework/pybag/pybind11_generics/pybind11/tools/clang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/aib_ams" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bag3_analog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bag3_digital" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bag3_testbenches" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bag3_testbenches/bag3_liberty" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/data/bag3_digital" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/skywater130" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/xbase" vcs="Git" />
