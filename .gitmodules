@@ -22,3 +22,12 @@
 [submodule "data/bag3_digital"]
 	path = data/bag3_digital
 	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_bag3_digital_data
+[submodule "data/bag3_analog"]
+	path = data/bag3_analog
+	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_bag3_analog_data.git
+[submodule "data/xbase"]
+	path = data/xbase
+	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_xbase_data.git
+[submodule "data/aib_ams"]
+	path = data/aib_ams
+	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_aib_ams_data.git
