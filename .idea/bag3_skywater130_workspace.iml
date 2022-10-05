@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="skywater130" />
     <orderEntry type="module" module-name="bag3_analog" />
     <orderEntry type="module" module-name="bag3_testbenches" />
+    <orderEntry type="module" module-name="xbase_bcad" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="pytest" />

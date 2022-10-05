@@ -31,3 +31,6 @@
 [submodule "data/aib_ams"]
 	path = data/aib_ams
 	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_aib_ams_data.git
+[submodule "data/bag3_testbenches"]
+	path = data/bag3_testbenches
+	url = git@bwrcrepo.eecs.berkeley.edu:swtech130/skywater130_bag3_testbenches_data.git
