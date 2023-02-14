@@ -14,7 +14,11 @@
     <mapping directory="$PROJECT_DIR$/bag3_digital" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bag3_testbenches" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bag3_testbenches/bag3_liberty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/data/aib_ams" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/data/bag3_analog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/data/bag3_digital" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/data/bag3_testbenches" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/data/xbase" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/skywater130" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/xbase" vcs="Git" />
   </component>
