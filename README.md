@@ -1,67 +1,55 @@
 # BAG3 SkyWater130 Template Workspace 
 
-For use on BWRC infrastructure 
-
-
 ## Requirements 
 
-This template workspace uses the pre-compiled version of BAG3 installed on the BWRC Linux servers. 
+This template workspace has only been tested on BWRC Linux servers thus far. A more comprehensive release of BAG3 with more nicely packaged dependencies is coming soon. In the meantime, please report any issues from missing dependencies.
 
-BAG3 will successfully run on a subset of the BWRC servers, which particularly include: 
+The following C++ dependencies and versions were used. Note that more recent versions of these tools may be compatible but older versions may not be:
+* CMake 3.17.0
+* GCC 8.3.1 (Through devtoolset-8)
+* Boost 1.72.0
+* fmt 8.22
 
-* RedHat Linux v7. Running `uname -a` should yield a string that includes `el7`. 
-* RedHat DevTools v8, and several related packages. On relevant machines, enable these byt running `source scl_source enable devtoolset-8 rh-git29 httpd24`
-* The one known-good server as of commit-time is `bwrcr740-8`. It comes highly recommended. 
+The following python dependencies are used. This workspace has been tested with Python 3.7.7:
+* numpy 1.20.1
+* scipy 1.6.2
+* matplotlib 3.3.4
+* hdf5 1.10.4
 
 
 ## Initial Setup 
 
 After cloning, do the following:
 
-1. ssh to a server that supports RHEL7, or use bsub on the rhel7i queue.
-2. add this to your home .bashrc so that devtoolset is enabled everytime a new terminal is opened: `source scl_source enable devtoolset-8 rh-git29 httpd24`
-3. Start bash
-4. `git submodule update --init --recursive`
-5. Create a new cds.lib as follows: `echo "INCLUDE cds.lib.core" >> cds.lib`
+1. ssh to a server/use a machine that supports RHEL7.
+2. Start bash
+3. Clone this repository and `cd` into it
+4. Initialize all submodules by running `git submodule update --init --recursive`
+5. Go through `.bashrc` and `.bashrc_bag`, and make sure all paths that start with `/path/to/` are updated to your a valid installation on your machine. Versions for tools are not strict, except for the `CMake` version. 
 6. `source .bashrc`
-7. `cd BAG_framework/pybag`
-8. `./run_test.sh`
-9. `cd ../..`
-10. Run just lines 55 and 56 of [setup_script.sh](setup_script.sh) to create symlinks to storage places in /tools/scratch.
+7. Create a new cds.lib and set up symbolic links by running `./init_files.sh`
+8. Compile pybag:
+    - `cd BAG_framework/pybag`
+    - `./run_test.sh`
+    - `cd ../..`
+9. Launch `virtuoso`. In the CIW, run `load('start_bag.il')`
+    - This opens up the SKILL interface for BAG to import/export schematics and layouts
+10. Run BAG commands from the bash shell
 
-## Working 
+**Note**: Steps 3-5 and 7 only need to be done when creating a new BAG workspace.
 
-To start working, run:
+**Note**: Step 8 needs to be done when creating a new BAG workspace or when pybag is updated.
 
-```
-source scripts/work.sh
-```
+For typical operation (i.e., with a BAG workspace that is already set up and no pybag updates), do the following:
 
-This [much-shorter script](scripts/work.sh) loads required packages and configures the run-environment. 
-(It may be just as easy to run "manually".) 
-Note it is intended to be `source`-ed, and to modify its parent environment. 
-
-
-## Testing 
-
-To (at any point) check for valid installation and configuration, run the [scripts/test.sh](scripts/test.sh) script. 
-This will generate a set of simple schematics and layouts from `bag3_digital`. 
-If successful,  you'll be met with output like so: 
-
-```
-# ... 
-creating BAG project
-*WARNING* [Errno 2] No such file or directory: '/tools/B/dan_fritchman/sky130/bag3_skywater130_workspace/BAG_server_port.txt'.  Operating without Virtuoso.
-computing schematic...
-computation done.
-creating netlist...
-netlisting done.
-```
-
-Generated netlists and GDS layouts can be found in the `gen_outputs` directory. 
-The content of [scripts/test.sh](scripts/test.sh) includes the run-commands, which can also be run on their own. 
-
-
+1. Log into to any compute server that supports RHEL7
+    - All machines on the LSF cluster should now support RHEL7
+2. Start bash
+3. `cd` into the workspace
+4. `source .bashrc`
+5. Launch `virtuoso`. In the CIW, run `load('start_bag.il')`
+    - This opens up the SKILL interface for BAG to import/export schematics and layouts
+6. Run BAG commands from the bash shell
 ## Caveats 
 
 If you would like to use abstract generation, there are a few issues to be aware of. More details available of the issues surrounding abstract generation and additional setup instructions in [the tech plugin abstract setup README.](skywater130/abstract_setup/README.md)
@@ -70,5 +58,3 @@ If you would like to use abstract generation, there are a few issues to be aware
 
 This library is licensed under the Apache-2.0 license.  See [here](LICENSE) for full text of the
 Apache license.
-
-
