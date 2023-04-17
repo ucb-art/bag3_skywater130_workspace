@@ -3,8 +3,8 @@
 ## Requirements 
 **Note**: These steps only need to be run once to use BAG3. As of writing these instructions have only been tested on BWRC servers.
 
-1. install (on CentOS or Red Hat versions >=7) 
-	* httpd24-curl
+1. Install (on CentOS or Red Hat versions >=7) 
+    * httpd24-curl
     * httpd24-libcurl
     * devtoolset-8 (compilers)
     * rh-git29 (better git)
@@ -107,14 +107,23 @@
      Remember to check install.log to see if there's any error messages (like python build error, etc.). We are not building with mpi
 	
 	
-16.  In .bashrc_bag , set
+16.  In .bashrc_bag , set 
      ```
      export BAG_TOOLS_ROOT=/path/to/conda/env/envname
+     ```
+     and
+     ```
+     export BAG_TEMP_DIR=/scratch/path
      ```
 	
 17.  In .bashrc set
      ```
      export CMAKE_HOME=/path/to/programs/cmake-3.17.0 
+     ```
+     and change the Skywater PDK install directory to be your own
+     
+     ```
+     export SW_PDK_ROOT=/tools/commercial/skywater
      ```
 
 18. Test bag compilation by following steps the next section (Initial Setup). If you have issues upon compiling BAG, reinstall fmt>7.2 in conda, and spdlog in conda
@@ -151,7 +160,13 @@ For typical operation (i.e., with a BAG workspace that is already set up and no 
 4. `source .bashrc`
 5. Launch `virtuoso`. In the CIW, run `load('start_bag.il')`
     - This opens up the SKILL interface for BAG to import/export schematics and layouts
-6. Run BAG commands from the bash shell
+6. Run BAG commands from the bash shell. To test generation of an inverter cell run in terminal inside the cloned directory: 
+   ```
+   ./gen_cell.sh data/bag3_digital/specs_blk/inv_chain/gen.yaml
+   ```
+   A corresponding library named `AAA_INV_CHAIN` will appear in your Virtuoso library manager. 
+
+**Note**: A read-the-docs page is in progress for a more comprehensive introduction to BAG capabilities and instructions to make your own generators. 
 
 ## Licensing
 
