@@ -64,62 +64,58 @@
     ```
 
 11.  Download HDF5 1.10 (h5py-2.10 does not work with 1.12 yet)
-
-    ```
-	wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz
-	tar -xvf hd5f-1.10.6.tar.gz
-	```
+     ```
+     wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz
+     tar -xvf hd5f-1.10.6.tar.gz
+     ```
+     , then install with:
 	
-	, then install with:
-	
-	```
-	cd hd5f-1.10.6.tar.gz
-    ./configure --prefix=/path/to/conda/env/envname
-    make -j24
-    make install
-    ```
+     ```
+     cd hd5f-1.10.6.tar.gz
+     ./configure --prefix=/path/to/conda/env/envname
+     make -j24
+     make install
+     ```
 
 
 12.  Install Boost in steps 12-15. Download source, unzip.  In directory, run:
 
-    ```
-	wget https://boostorg.jfrog.io/artifactory/main/release/1.72.0/source/boost_1_72_0.tar.gz
-	tar -xvf boost_1_72_0.tar.gz
-	cd boost_1_72_0
-    ./bootstrap.sh --prefix=/path/to/conda/env/envname
-    ```
+     ```
+     wget https://boostorg.jfrog.io/artifactory/main/release/1.72.0/source/boost_1_72_0.tar.gz
+     tar -xvf boost_1_72_0.tar.gz
+     cd boost_1_72_0
+     ./bootstrap.sh --prefix=/path/to/conda/env/envname
+     ```
 
 13.  Change the `using python` line to:
 
-    ```
-    using python : 3.7 : /path/to/conda/env/envname : /path/to/conda/env/envname/include/python3.7m ;
-    ```
+     ```
+     using python : 3.7 : /path/to/conda/env/envname : /path/to/conda/env/envname/include/python3.7m ;
+     ```
 	
-14. Delete the line:
-	```
-	path-constant ICU_PATH : /usr ;
-	```
+14.  Delete the line:
+     ```
+     path-constant ICU_PATH : /usr ;
+     ```
 
 15.  Run:
 
-    ```
-    ./b2 --build-dir=_build cxxflags=-fPIC -j8 -target=shared,static \
-        --with-filesystem --with-serialization --with-program_options \
-        install | tee install.log
-    ```
+     ```
+     ./b2 --build-dir=_build cxxflags=-fPIC -j8 -target=shared,static --with-filesystem --with-serialization --with-program_options install | tee install.log
+     ```
 
-    Remember to check install.log to see if there's any error messages (like python build error, etc.). We are not building with mpi
+     Remember to check install.log to see if there's any error messages (like python build error, etc.). We are not building with mpi
 	
 	
 16.  In .bashrc_bag , set
-	```
-	export BAG_TOOLS_ROOT=/path/to/conda/env/envname
-	```
+     ```
+     export BAG_TOOLS_ROOT=/path/to/conda/env/envname
+     ```
 	
-17. In .bashrc set
-	```
-	export CMAKE_HOME=/path/to/programs/cmake-3.17.0 
-	```
+17.  In .bashrc set
+     ```
+     export CMAKE_HOME=/path/to/programs/cmake-3.17.0 
+     ```
 
 18. Test bag compilation by following steps the next section (Initial Setup). If you have issues upon compiling BAG, reinstall fmt>7.2 in conda, and spdlog in conda
 
