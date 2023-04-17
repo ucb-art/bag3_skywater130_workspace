@@ -160,7 +160,7 @@ For typical operation (i.e., with a BAG workspace that is already set up and no 
 4. `source .bashrc`
 5. Launch `virtuoso`. In the CIW, run `load('start_bag.il')`
     - This opens up the SKILL interface for BAG to import/export schematics and layouts
-6. Run BAG commands from the bash shell. To test generation of an inverter cell run in terminal inside the cloned directory: 
+6. Run BAG commands from the bash shell. To test generation of an inverter cell, run  the following command inside the BAG workspace (folder this repo was cloned into): 
    ```
    ./gen_cell.sh data/bag3_digital/specs_blk/inv_chain/gen.yaml
    ```
