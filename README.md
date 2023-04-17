@@ -2,20 +2,121 @@
 
 ## Requirements 
 
-This template workspace has only been tested on BWRC Linux servers thus far. A more comprehensive release of BAG3 with more nicely packaged dependencies is coming soon. In the meantime, please report any issues from missing dependencies.
+1. install (on CentOS or Red Hat versions >=7) 
+	* httpd24-curl
+    * httpd24-libcurl
+    * devtoolset-8 (compilers)
+    * rh-git29 (better git)
+	
+2. Create and activate the conda environment from the provided environment.yml. Note the path to the solved environment.
 
-The following C++ dependencies and versions were used. Note that more recent versions of these tools may be compatible but older versions may not be:
-* CMake 3.17.0
-* GCC 8.3.1 (Through devtoolset-8)
-* Boost 1.72.0
-* fmt 8.22
+3. The steps 4-12 involve installing other dependencies that have not been incorporated into the conda build
+   Create a directory to install programs in (referred to as /path/to/programs).
+   
+4. download and extract cmake 3.17.0:
 
-The following python dependencies are used. This workspace has been tested with Python 3.7.7:
-* numpy 1.20.1
-* scipy 1.6.2
-* matplotlib 3.3.4
-* hdf5 1.10.4
+	```
+	 wget https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0.tar.gz
+	 tar -xvf cmake-3.17.0.tar.gz
+	```
+	 
+	then build:
 
+    ```
+	cd cmake-3.17.0.tar.gz
+    ./bootstrap --prefix=/path/to/conda/env/envname --parallel=4
+    make -j4
+    make install
+    ```
+
+5.  for magic\_enum:
+    ```
+    git clone https://github.com/Neargye/magic_enum.git
+    cd magic_enum
+    cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Release -DMAGIC_ENUM_OPT_BUILD_EXAMPLES=FALSE \
+        -DMAGIC_ENUM_OPT_BUILD_TESTS=FALSE -DCMAKE_INSTALL_PREFIX=/path/to/conda/env/envname
+    cmake --build build
+    cd build
+    make install
+    ```
+
+6.  for yaml-cpp:
+    ```
+    git clone https://github.com/jbeder/yaml-cpp.git
+    cd yaml-cpp
+    cmake -B_build -H. -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_INSTALL_PREFIX=/path/to/conda/env/envname
+    cmake --build _build --target install -- -j 4
+    ```
+
+7.  for libfyaml:
+    ```
+    git clone https://github.com/pantoniou/libfyaml.git
+    cd libfyaml
+    ./bootstrap.sh
+    ./configure --prefix=/path/to/conda/env/envname
+    make -j12
+    make install
+    ```
+
+8.  Download HDF5 1.10 (h5py-2.10 does not work with 1.12 yet)
+
+    ```
+	wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz
+	tar -xvf hd5f-1.10.6.tar.gz
+	```
+	
+	, then install with:
+	
+	```
+	cd hd5f-1.10.6.tar.gz
+    ./configure --prefix=/path/to/conda/env/envname
+    make -j24
+    make install
+    ```
+
+
+9.  Install Boost in steps 9-12. Download source, unzip.  In directory, run:
+
+    ```
+	wget https://boostorg.jfrog.io/artifactory/main/release/1.72.0/source/boost_1_72_0.tar.gz
+	tar -xvf boost_1_72_0.tar.gz
+	cd boost_1_72_0
+    ./bootstrap.sh --prefix=/path/to/conda/env/envname
+    ```
+
+10.  Change the `using python` line to:
+
+    ```
+    using python : 3.7 : /path/to/conda/env/envname : /path/to/conda/env/envname/include/python3.7m ;
+    ```
+	
+11. Delete the line:
+	```
+	path-constant ICU_PATH : /usr ;
+	```
+
+12.  Run:
+
+    ```
+    ./b2 --build-dir=_build cxxflags=-fPIC -j8 -target=shared,static \
+        --with-filesystem --with-serialization --with-program_options \
+        install | tee install.log
+    ```
+
+    Remember to check install.log to see if there's any error messages (like python build error, etc.). We are not building with mpi
+	
+	
+13.  In .bashrc_bag , set
+	```
+	export BAG_TOOLS_ROOT=/path/to/conda/env/envname
+	```
+	
+14. In .bashrc set
+	```
+	export CMAKE_HOME=/path/to/programs/cmake-3.17.0 
+	```
+
+15. Test bag compilation by following steps the next section (Initial Setup). If you have issues upon compiling BAG, reinstall fmt>7.2 in conda, and spdlog in conda
 
 ## Initial Setup 
 
