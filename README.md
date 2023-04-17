@@ -1,19 +1,24 @@
 # BAG3 SkyWater130 Template Workspace 
 
 ## Requirements 
+**Note**: These steps only need to be run once to use BAG3. As of writing these instructions have only been tested on BWRC servers.
 
 1. install (on CentOS or Red Hat versions >=7) 
 	* httpd24-curl
     * httpd24-libcurl
     * devtoolset-8 (compilers)
     * rh-git29 (better git)
-	
-2. Create and activate the conda environment from the provided environment.yml. Note the path to the solved environment.
+    
+3. Clone this repository and `cd` into it
 
-3. The steps 4-12 involve installing other dependencies that have not been incorporated into the conda build
+4. Initialize all submodules by running `git submodule update --init --recursive`
+
+5. Create and activate the conda environment from the provided `environment.yml`. Note the path to the solved environment.
+
+6. The steps 4-12 involve installing other dependencies that have not been incorporated into the conda build
    Create a directory to install programs in (referred to as /path/to/programs).
    
-4. download and extract cmake 3.17.0:
+7. Download and extract cmake 3.17.0:
 
 	```
 	 wget https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0.tar.gz
@@ -29,7 +34,7 @@
     make install
     ```
 
-5.  for magic\_enum:
+8.  For magic\_enum:
     ```
     git clone https://github.com/Neargye/magic_enum.git
     cd magic_enum
@@ -40,7 +45,7 @@
     make install
     ```
 
-6.  for yaml-cpp:
+9.  For yaml-cpp:
     ```
     git clone https://github.com/jbeder/yaml-cpp.git
     cd yaml-cpp
@@ -48,7 +53,7 @@
     cmake --build _build --target install -- -j 4
     ```
 
-7.  for libfyaml:
+10.  For libfyaml:
     ```
     git clone https://github.com/pantoniou/libfyaml.git
     cd libfyaml
@@ -58,7 +63,7 @@
     make install
     ```
 
-8.  Download HDF5 1.10 (h5py-2.10 does not work with 1.12 yet)
+11.  Download HDF5 1.10 (h5py-2.10 does not work with 1.12 yet)
 
     ```
 	wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz
@@ -75,7 +80,7 @@
     ```
 
 
-9.  Install Boost in steps 9-12. Download source, unzip.  In directory, run:
+12.  Install Boost in steps 12-15. Download source, unzip.  In directory, run:
 
     ```
 	wget https://boostorg.jfrog.io/artifactory/main/release/1.72.0/source/boost_1_72_0.tar.gz
@@ -84,18 +89,18 @@
     ./bootstrap.sh --prefix=/path/to/conda/env/envname
     ```
 
-10.  Change the `using python` line to:
+13.  Change the `using python` line to:
 
     ```
     using python : 3.7 : /path/to/conda/env/envname : /path/to/conda/env/envname/include/python3.7m ;
     ```
 	
-11. Delete the line:
+14. Delete the line:
 	```
 	path-constant ICU_PATH : /usr ;
 	```
 
-12.  Run:
+15.  Run:
 
     ```
     ./b2 --build-dir=_build cxxflags=-fPIC -j8 -target=shared,static \
@@ -106,17 +111,17 @@
     Remember to check install.log to see if there's any error messages (like python build error, etc.). We are not building with mpi
 	
 	
-13.  In .bashrc_bag , set
+16.  In .bashrc_bag , set
 	```
 	export BAG_TOOLS_ROOT=/path/to/conda/env/envname
 	```
 	
-14. In .bashrc set
+17. In .bashrc set
 	```
 	export CMAKE_HOME=/path/to/programs/cmake-3.17.0 
 	```
 
-15. Test bag compilation by following steps the next section (Initial Setup). If you have issues upon compiling BAG, reinstall fmt>7.2 in conda, and spdlog in conda
+18. Test bag compilation by following steps the next section (Initial Setup). If you have issues upon compiling BAG, reinstall fmt>7.2 in conda, and spdlog in conda
 
 ## Initial Setup 
 
@@ -124,8 +129,8 @@ After cloning, do the following:
 
 1. ssh to a server/use a machine that supports RHEL7.
 2. Start bash
-3. Clone this repository and `cd` into it
-4. Initialize all submodules by running `git submodule update --init --recursive`
+3. Clone this repository and `cd` into it (if you have not done so already).
+4. Initialize all submodules by running `git submodule update --init --recursive` (if you have not done so already).
 5. Go through `.bashrc` and `.bashrc_bag`, and make sure all paths that start with `/path/to/` are updated to your a valid installation on your machine. Versions for tools are not strict, except for the `CMake` version. 
 6. `source .bashrc`
 7. Create a new cds.lib and set up symbolic links by running `./init_files.sh`
