@@ -152,9 +152,6 @@ For typical operation (i.e., with a BAG workspace that is already set up and no 
 5. Launch `virtuoso`. In the CIW, run `load('start_bag.il')`
     - This opens up the SKILL interface for BAG to import/export schematics and layouts
 6. Run BAG commands from the bash shell
-## Caveats 
-
-If you would like to use abstract generation, there are a few issues to be aware of. More details available of the issues surrounding abstract generation and additional setup instructions in [the tech plugin abstract setup README.](skywater130/abstract_setup/README.md)
 
 ## Licensing
 
