@@ -170,5 +170,5 @@ For typical operation (i.e., with a BAG workspace that is already set up and no 
 
 ## Licensing
 
-This library is licensed under the Apache-2.0 license.  See [here](LICENSE) for full text of the
-Apache license.
+This library is licensed under the BSD 3-Clause license.  See [here](LICENSE) for full text of the
+BSD 3-Clause license.
