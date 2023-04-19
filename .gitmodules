@@ -31,3 +31,6 @@
 [submodule "data/bag3_testbenches"]
 	path = data/bag3_testbenches
 	url = git@github.com:ucb-art/bag3_testbenches_data_skywater130.git
+[submodule "data/xbase"]
+	path = data/xbase
+	url = git@github.com:ucb-art/xbase_data_skywater130.git
