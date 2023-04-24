@@ -2,8 +2,7 @@ BAG_prim
 aib_ams
 bag3_analog
 bag3_digital
+bag3_magnetics
 bag3_testbenches
 bag3_liberty
 xbase
-skywater130_bag3_sar_adc
-bag3_sync_sar_adc

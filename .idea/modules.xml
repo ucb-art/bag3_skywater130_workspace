@@ -5,11 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/BAG_framework/.idea/BAG_framework.iml" filepath="$PROJECT_DIR$/BAG_framework/.idea/BAG_framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/bag3_analog/.idea/bag3_analog.iml" filepath="$PROJECT_DIR$/bag3_analog/.idea/bag3_analog.iml" />
       <module fileurl="file://$PROJECT_DIR$/bag3_digital/.idea/bag3_digital.iml" filepath="$PROJECT_DIR$/bag3_digital/.idea/bag3_digital.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bag3_magnetics/.idea/bag3_magnetics.iml" filepath="$PROJECT_DIR$/bag3_magnetics/.idea/bag3_magnetics.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bag3_skywater130_workspace.iml" filepath="$PROJECT_DIR$/.idea/bag3_skywater130_workspace.iml" />
       <module fileurl="file://$PROJECT_DIR$/bag3_testbenches/.idea/bag3_testbenches.iml" filepath="$PROJECT_DIR$/bag3_testbenches/.idea/bag3_testbenches.iml" />
       <module fileurl="file://$PROJECT_DIR$/skywater130/.idea/skywater130.iml" filepath="$PROJECT_DIR$/skywater130/.idea/skywater130.iml" />
       <module fileurl="file://$PROJECT_DIR$/xbase/.idea/xbase.iml" filepath="$PROJECT_DIR$/xbase/.idea/xbase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xbase/.idea/xbase_bcad.iml" filepath="$PROJECT_DIR$/xbase/.idea/xbase_bcad.iml" />
     </modules>
   </component>
 </project>

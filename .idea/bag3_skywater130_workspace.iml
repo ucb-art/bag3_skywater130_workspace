@@ -9,11 +9,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="bag3_digital" />
     <orderEntry type="module" module-name="BAG_framework" />
-    <orderEntry type="module" module-name="xbase" />
     <orderEntry type="module" module-name="skywater130" />
     <orderEntry type="module" module-name="bag3_analog" />
+    <orderEntry type="module" module-name="bag3_magnetics" />
     <orderEntry type="module" module-name="bag3_testbenches" />
-    <orderEntry type="module" module-name="xbase_bcad" />
+    <orderEntry type="module" module-name="xbase" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="pytest" />
