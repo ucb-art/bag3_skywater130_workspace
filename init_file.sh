@@ -42,3 +42,52 @@ echo "INCLUDE cds.lib.core" >> cds.lib
 # set up symlinks
 ln -s ${BAG_TEMP_DIR}/simulations/gen_outputs gen_outputs_scratch
 ln -s ${BAG_TEMP_DIR}/calibre_run calibre_run
+
+# setup cadence shared library linkage
+if [ -z ${CDS_INST_DIR} ]
+then
+    echo "CDS_INST_DIR is unset"
+    exit 1
+fi
+
+mkdir cadence_libs
+
+declare -a lib_arr=("libblosc.so"
+                    "libblosc.so.1"
+                    "libblosc.so.1.11.4"
+                    "libcdsCommon_sh.so"
+                    "libcdsenvutil.so"
+                    "libcdsenvxml.so"
+                    "libcla_sh.so"
+                    "libcls_sh.so"
+                    "libdataReg_sh.so"
+                    "libddbase_sh.so"
+                    "libdrlLog.so"
+                    "libfastt_sh.so"
+                    "libgcc_s.so"
+                    "libgcc_s.so.1"
+                    "liblz4.so"
+                    "liblz4.so.1"
+                    "liblz4.so.1.7.1"
+                    "libnffr.so"
+                    "libnmp_sh.so"
+                    "libnsys.so"
+                    "libpsf.so"
+                    "libsrr_fsdb.so"
+                    "libsrr.so"
+                    "libstdc++.so"
+                    "libstdc++.so.5"
+                    "libstdc++.so.5.0.7"
+                    "libstdc++.so.6"
+                    "libstdc++.so.6.0.22"
+                    "libvirtuos_sh.so"
+                    "libz_sh.so"
+                   )
+
+for libname in "${lib_arr[@]}"; do
+    fpath=${CDS_INST_DIR}/tools/lib/64bit/${libname}
+    if [ ! -f "$fpath" ]; then
+        echo "WARNING: Cannot find packaged Virtuoso shared library ${fpath}; symlink will be broken."
+    fi
+    ln -s ${fpath} cadence_libs/${libname}
+done
